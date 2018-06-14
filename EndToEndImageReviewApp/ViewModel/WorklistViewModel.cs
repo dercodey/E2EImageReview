@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EndToEndImageReviewApp.ViewModel
 {
-    public class WorklistViewModel
+    public class WorklistViewModel : BindableBase
     {
         WorklistModel model = new WorklistModel();
 
@@ -22,6 +23,11 @@ namespace EndToEndImageReviewApp.ViewModel
             Items = new ObservableCollection<WorklistItem>(task.Result);
         }
 
-        public ObservableCollection<WorklistItem> Items { get; set; }
+        public ObservableCollection<WorklistItem> Items
+        {
+            get => _items;
+            set => SetProperty(ref _items, value);
+        }
+        ObservableCollection<WorklistItem> _items;
     }
 }

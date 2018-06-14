@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EndToEndImageReviewApp
 {
-    public class WorklistItem
+    public class WorklistItem : BindableBase
     {
         public Guid PatientId { get; set; }
 
