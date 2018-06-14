@@ -9,24 +9,34 @@ namespace EmzWorklistInteractionManager
 {
     internal static class MsqMappingHelper
     {
-        static Guid MapStaff(int staffId)
+        internal static Guid MapStaff(int staffId)
         {
             return Guid.NewGuid();
         }
 
-        static int MapStaff(Guid staffId)
+        internal static int MapStaff(Guid staffId)
         {
             return 0;
         }
 
-        static Guid MapPatient(int patientId)
+        internal static Guid MapPatient(int patientId)
         {
             return Guid.NewGuid();
         }
 
-        static int MapPatient(Guid patientId)
+        internal static int MapPatient(Guid patientId)
         {
             return patientId.ToByteArray()[0] << 8 + patientId.ToByteArray()[1];
+        }
+
+        internal static Guid MapImage(int imageId)
+        {
+            return Guid.NewGuid();
+        }
+
+        internal static int MapImage(Guid imageId)
+        {
+            return imageId.ToByteArray()[0] << 8 + imageId.ToByteArray()[1];
         }
     }
 }

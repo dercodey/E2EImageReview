@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EmzWorklistInteractionManager.MsqWorklistService {
+namespace ImageWorkListAggregatorManager.EmzWorklistInteractionService {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MsqWorklistItem", Namespace="http://schemas.datacontract.org/2004/07/MsqWorklistService")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WorklistItem", Namespace="http://schemas.datacontract.org/2004/07/EmzWorklistInteractionManager")]
     [System.SerializableAttribute()]
-    public partial class MsqWorklistItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class WorklistItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -26,10 +26,10 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
         private System.DateTime AcquisitionDateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MsqImgIdField;
+        private System.Guid ImageIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MsqPatId1Field;
+        private System.Guid PatientIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -55,27 +55,27 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MsqImgId {
+        public System.Guid ImageId {
             get {
-                return this.MsqImgIdField;
+                return this.ImageIdField;
             }
             set {
-                if ((this.MsqImgIdField.Equals(value) != true)) {
-                    this.MsqImgIdField = value;
-                    this.RaisePropertyChanged("MsqImgId");
+                if ((this.ImageIdField.Equals(value) != true)) {
+                    this.ImageIdField = value;
+                    this.RaisePropertyChanged("ImageId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int MsqPatId1 {
+        public System.Guid PatientId {
             get {
-                return this.MsqPatId1Field;
+                return this.PatientIdField;
             }
             set {
-                if ((this.MsqPatId1Field.Equals(value) != true)) {
-                    this.MsqPatId1Field = value;
-                    this.RaisePropertyChanged("MsqPatId1");
+                if ((this.PatientIdField.Equals(value) != true)) {
+                    this.PatientIdField = value;
+                    this.RaisePropertyChanged("PatientId");
                 }
             }
         }
@@ -91,48 +91,48 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MsqWorklistService.IMsqWorklistService")]
-    public interface IMsqWorklistService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmzWorklistInteractionService.IWorklistInteractionManager")]
+    public interface IWorklistInteractionManager {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqWorklistService/GetWorklistForStaffResponse")]
-        System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaffResponse")]
+        System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem> GetWorklistForStaff(System.Guid staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqWorklistService/GetWorklistForStaffResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaffResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMsqWorklistServiceChannel : EmzWorklistInteractionManager.MsqWorklistService.IMsqWorklistService, System.ServiceModel.IClientChannel {
+    public interface IWorklistInteractionManagerChannel : ImageWorkListAggregatorManager.EmzWorklistInteractionService.IWorklistInteractionManager, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MsqWorklistServiceClient : System.ServiceModel.ClientBase<EmzWorklistInteractionManager.MsqWorklistService.IMsqWorklistService>, EmzWorklistInteractionManager.MsqWorklistService.IMsqWorklistService {
+    public partial class WorklistInteractionManagerClient : System.ServiceModel.ClientBase<ImageWorkListAggregatorManager.EmzWorklistInteractionService.IWorklistInteractionManager>, ImageWorkListAggregatorManager.EmzWorklistInteractionService.IWorklistInteractionManager {
         
-        public MsqWorklistServiceClient() {
+        public WorklistInteractionManagerClient() {
         }
         
-        public MsqWorklistServiceClient(string endpointConfigurationName) : 
+        public WorklistInteractionManagerClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public MsqWorklistServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public WorklistInteractionManagerClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MsqWorklistServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public WorklistInteractionManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MsqWorklistServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public WorklistInteractionManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId) {
+        public System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem> GetWorklistForStaff(System.Guid staffId) {
             return base.Channel.GetWorklistForStaff(staffId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId) {
             return base.Channel.GetWorklistForStaffAsync(staffId);
         }
     }

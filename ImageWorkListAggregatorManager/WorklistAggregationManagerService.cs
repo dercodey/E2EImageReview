@@ -6,25 +6,23 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmzWorklistInteractionManager
+namespace ImageWorkListAggregatorManager
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    public class WorklistInteractionManagerService : IWorklistInteractionManager
+    public class WorklistAggregationManagerService : IWorklistAggregationManager
     {
         public async Task<List<WorklistItem>> GetWorklistForStaff(Guid staffId)
         {
-            var msqStaffId = MsqMappingHelper.MapStaff(staffId);
-
-            var client = new MsqWorklistService.MsqWorklistServiceClient();
-            var msqWorklist = await client.GetWorklistForStaffAsync(msqStaffId);
+            var client = new EmzWorklistInteractionService.WorklistInteractionManagerClient();
+            var resultList = await client.GetWorklistForStaffAsync(staffId);
             client.Close();
 
             var worklist =
-                msqWorklist.Select(item =>
+                resultList.Select(item =>
                 new WorklistItem()
                 {
-                    PatientId = MsqMappingHelper.MapPatient(item.MsqPatId1),
-                    ImageId = Guid.Empty,
+                    PatientId = item.PatientId,
+                    ImageId = item.ImageId,
                     AcquisitionDateTime = item.AcquisitionDateTime
                 });
 

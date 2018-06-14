@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EndToEndImageReviewApp
+{
+    public class WorklistItem
+    {
+        public Guid PatientId { get; set; }
+
+        public string PatientName { get; set; }
+
+        public Guid ImageId { get; set; }
+
+        public DateTime AcquisitionDateTime { get; set; }
+    }
+}
