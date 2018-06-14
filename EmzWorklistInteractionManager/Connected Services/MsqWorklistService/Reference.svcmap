@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d8908e6f-c809-4b85-aa7b-4bc374fd4bd2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/MsqWorklistService/Service1/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="f27db337-c37c-4398-a8d4-0ee07eda8ae0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MsqWorklistService/Service1/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7caae498-fc36-48b9-b64a-bed68143abfd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MsqWorklistService/Service1/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0b6c6aac-4dfc-4b71-9e37-dced9601ea47" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MsqWorklistService/Service1/mex" />
+    <MetadataFile FileName="MsqWorklistService.xsd" MetadataType="Schema" ID="abe26af9-8c0f-4c1a-86f6-83d3a90ccd1f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/MsqWorklistService/Service1/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
