@@ -7,36 +7,39 @@ using System.Threading.Tasks;
 
 namespace EmzWorklistInteractionManager
 {
+    internal enum EntityType
+    {
+        Staff,
+        Patient,
+        Image
+    }
+
     internal static class MsqMappingHelper
     {
-        internal static Guid MapStaff(int staffId)
+        internal static Guid MapIdFromMsq(EntityType forEntityType, int msqEntityId)
         {
-            return Guid.NewGuid();
+            var dict = _mappings[forEntityType];
+            if (!dict.ContainsKey(msqEntityId))
+                dict.Add(msqEntityId, Guid.NewGuid());
+            return dict[msqEntityId];
         }
 
-        internal static int MapStaff(Guid staffId)
+        internal static int MapIdToMsq(EntityType forEntityType, Guid entityId)
         {
-            return 0;
+            var dict = _mappings[forEntityType];
+            var key = 
+                from entry in dict
+                where entry.Value.CompareTo(entityId) == 0
+                select entry.Key;
+            return key.FirstOrDefault();
         }
 
-        internal static Guid MapPatient(int patientId)
-        {
-            return Guid.NewGuid();
-        }
-
-        internal static int MapPatient(Guid patientId)
-        {
-            return patientId.ToByteArray()[0] << 8 + patientId.ToByteArray()[1];
-        }
-
-        internal static Guid MapImage(int imageId)
-        {
-            return Guid.NewGuid();
-        }
-
-        internal static int MapImage(Guid imageId)
-        {
-            return imageId.ToByteArray()[0] << 8 + imageId.ToByteArray()[1];
-        }
+        static Dictionary<EntityType, Dictionary<int, Guid>> _mappings =
+            new Dictionary<EntityType, Dictionary<int, Guid>>()
+            {
+                { EntityType.Staff, new Dictionary<int,Guid>() },
+                { EntityType.Patient, new Dictionary<int,Guid>() },
+                { EntityType.Image, new Dictionary<int,Guid>() },
+            };
     }
 }

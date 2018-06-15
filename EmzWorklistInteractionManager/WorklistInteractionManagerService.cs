@@ -13,7 +13,7 @@ namespace EmzWorklistInteractionManager
     {
         public async Task<List<WorklistItem>> GetWorklistForStaff(Guid staffId)
         {
-            var msqStaffId = MsqMappingHelper.MapStaff(staffId);
+            var msqStaffId = MsqMappingHelper.MapIdToMsq(EntityType.Staff, staffId);
 
             var client = new MsqWorklistService.MsqWorklistServiceClient();
             var msqWorklist = await client.GetWorklistForStaffAsync(msqStaffId);
@@ -23,13 +23,35 @@ namespace EmzWorklistInteractionManager
                 msqWorklist.Select(item =>
                 new WorklistItem()
                 {
-                    PatientId = MsqMappingHelper.MapPatient(item.MsqPatId1),
-                    ImageId = Guid.Empty,
+                    PatientId = MsqMappingHelper.MapIdFromMsq(EntityType.Patient, item.MsqPatId1),
+                    ImageId = MsqMappingHelper.MapIdFromMsq(EntityType.Image, item.MsqImgId),
                     AcquisitionDateTime = item.AcquisitionDateTime
                 });
 
             // convert staff Id to 
             return worklist.ToList();
+        }
+
+        public async Task<ImageInfo> GetImageInfo(Guid imageId)
+        {
+            var msqImgId = MsqMappingHelper.MapIdToMsq(EntityType.Image, imageId);
+
+            var client = new MsqWorklistService.MsqWorklistServiceClient();
+            var msqImageInfo = await client.GetImageInfoAsync(msqImgId);
+            client.Close();
+
+            return new ImageInfo()
+            {
+                ImageId = MsqMappingHelper.MapIdFromMsq(EntityType.Image, msqImageInfo.MsqImgId),
+                PatientId = MsqMappingHelper.MapIdFromMsq(EntityType.Patient, msqImageInfo.MsqImgId),
+                PatientName = msqImageInfo.PatientName,
+                AcquisitionDateTime = msqImageInfo.AcquisitionDateTime,
+            };
+        }
+
+        public Task<ImageData> GetImageDataForReview(Guid imageId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

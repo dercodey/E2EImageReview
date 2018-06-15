@@ -15,4 +15,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetImageInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImageInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MsqWorklistService" minOccurs="0" name="GetImageInfoResult" nillable="true" type="q2:MsqImageInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadImageData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="imgId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadImageDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MsqWorklistService" minOccurs="0" name="LoadImageDataResult" nillable="true" type="q3:MsqImageData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

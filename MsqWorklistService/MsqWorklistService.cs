@@ -12,13 +12,68 @@ namespace MsqWorklistService
     {
         public List<MsqWorklistItem> GetWorklistForStaff(int staffId)
         {
-            return new List<MsqWorklistItem>
+            var worklist = 
+                from imageRepositoryData in MsqImageRepository.GetAllImageData()
+                where imageRepositoryData.ReferenceImageId != null && imageRepositoryData.Reviewed == null
+                select new MsqWorklistItem()
+                {
+                    MsqPatId1 = imageRepositoryData.PatientId,
+                    MsqImgId = imageRepositoryData.ImageId,
+                    AcquisitionDateTime = imageRepositoryData.AcquisitionDateTime
+                };
+            return worklist.ToList();
+        }
+
+
+        public MsqImageInfo GetImageInfo(int imgId)
+        {
+            var imageRepositoryData =
+                MsqImageRepository
+                    .GetAllImageData()
+                    .FirstOrDefault(image => image.ImageId == imgId);
+
+            var patientData =
+                MsqImageRepository
+                    .GetAllPatientData()
+                    .FirstOrDefault(patient => patient.PatientId == imageRepositoryData.PatientId);
+
+            return new MsqImageInfo()
             {
-                new MsqWorklistItem() { MsqPatId1 = 10001, MsqImgId = 9000, AcquisitionDateTime = DateTime.Now.AddDays(-10), },
-                new MsqWorklistItem() { MsqPatId1 = 10001, MsqImgId = 9001, AcquisitionDateTime = DateTime.Now.AddDays(-9), },
-                new MsqWorklistItem() { MsqPatId1 = 10001, MsqImgId = 9002, AcquisitionDateTime = DateTime.Now.AddDays(-8), },
-                new MsqWorklistItem() { MsqPatId1 = 10001, MsqImgId = 9003, AcquisitionDateTime = DateTime.Now.AddDays(-7), },
+                MsqImgId = imageRepositoryData.ImageId,
+                MsqPatId1 = imageRepositoryData.PatientId,
+                PatientName = patientData.PatientName,
+                AcquisitionDateTime = imageRepositoryData.AcquisitionDateTime,
+                MsqReferenceImgId = imageRepositoryData.ReferenceImageId,
+                MsqRegistrationId = null,
             };
+        }
+
+        public MsqImageData LoadImageData(int imgId)
+        {
+            var imageRepositoryData =
+                MsqImageRepository
+                    .GetAllImageData()
+                    .FirstOrDefault(image => image.ImageId == imgId);
+
+            var msqImageData =
+                new MsqImageData()
+                {
+                    MsqImgId = imageRepositoryData.ImageId,
+                    Width = imageRepositoryData.Pixels.GetLength(0),
+                    Height = imageRepositoryData.Pixels.GetLength(1),
+                };
+
+            msqImageData.Pixels = new byte[ msqImageData.Width * msqImageData.Height ];
+
+            for (int x = 0; x < msqImageData.Width; x++)
+            {
+                for (int y = 0; y < msqImageData.Height; y++)
+                {
+                    msqImageData.Pixels[y * msqImageData.Width + x] = imageRepositoryData.Pixels[x, y];
+                }
+            }
+
+            return msqImageData;
         }
     }
 }

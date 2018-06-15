@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\MsqWorklistService\EmzWorklistInteractionManager.MsqWorklistService.MsqImageData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MsqWorklistService\EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MsqWorklistService\EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

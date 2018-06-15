@@ -90,6 +90,224 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MsqImageInfo", Namespace="http://schemas.datacontract.org/2004/07/MsqWorklistService")]
+    [System.SerializableAttribute()]
+    public partial class MsqImageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime AcquisitionDateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MsqImgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MsqPatId1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> MsqReferenceImgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> MsqRegistrationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime AcquisitionDateTime {
+            get {
+                return this.AcquisitionDateTimeField;
+            }
+            set {
+                if ((this.AcquisitionDateTimeField.Equals(value) != true)) {
+                    this.AcquisitionDateTimeField = value;
+                    this.RaisePropertyChanged("AcquisitionDateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MsqImgId {
+            get {
+                return this.MsqImgIdField;
+            }
+            set {
+                if ((this.MsqImgIdField.Equals(value) != true)) {
+                    this.MsqImgIdField = value;
+                    this.RaisePropertyChanged("MsqImgId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MsqPatId1 {
+            get {
+                return this.MsqPatId1Field;
+            }
+            set {
+                if ((this.MsqPatId1Field.Equals(value) != true)) {
+                    this.MsqPatId1Field = value;
+                    this.RaisePropertyChanged("MsqPatId1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> MsqReferenceImgId {
+            get {
+                return this.MsqReferenceImgIdField;
+            }
+            set {
+                if ((this.MsqReferenceImgIdField.Equals(value) != true)) {
+                    this.MsqReferenceImgIdField = value;
+                    this.RaisePropertyChanged("MsqReferenceImgId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> MsqRegistrationId {
+            get {
+                return this.MsqRegistrationIdField;
+            }
+            set {
+                if ((this.MsqRegistrationIdField.Equals(value) != true)) {
+                    this.MsqRegistrationIdField = value;
+                    this.RaisePropertyChanged("MsqRegistrationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientName {
+            get {
+                return this.PatientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientNameField, value) != true)) {
+                    this.PatientNameField = value;
+                    this.RaisePropertyChanged("PatientName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MsqImageData", Namespace="http://schemas.datacontract.org/2004/07/MsqWorklistService")]
+    [System.SerializableAttribute()]
+    public partial class MsqImageData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MsqImgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] PixelsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WidthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MsqImgId {
+            get {
+                return this.MsqImgIdField;
+            }
+            set {
+                if ((this.MsqImgIdField.Equals(value) != true)) {
+                    this.MsqImgIdField = value;
+                    this.RaisePropertyChanged("MsqImgId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Pixels {
+            get {
+                return this.PixelsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PixelsField, value) != true)) {
+                    this.PixelsField = value;
+                    this.RaisePropertyChanged("Pixels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Width {
+            get {
+                return this.WidthField;
+            }
+            set {
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MsqWorklistService.IMsqWorklistService")]
     public interface IMsqWorklistService {
@@ -99,6 +317,18 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqWorklistService/GetWorklistForStaffResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqWorklistService/GetImageInfoResponse")]
+        EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqWorklistService/GetImageInfoResponse")]
+        System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/LoadImageData", ReplyAction="http://tempuri.org/IMsqWorklistService/LoadImageDataResponse")]
+        EmzWorklistInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/LoadImageData", ReplyAction="http://tempuri.org/IMsqWorklistService/LoadImageDataResponse")]
+        System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +364,22 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId) {
             return base.Channel.GetWorklistForStaffAsync(staffId);
+        }
+        
+        public EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId) {
+            return base.Channel.GetImageInfo(imgId);
+        }
+        
+        public System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId) {
+            return base.Channel.GetImageInfoAsync(imgId);
+        }
+        
+        public EmzWorklistInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId) {
+            return base.Channel.LoadImageData(imgId);
+        }
+        
+        public System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId) {
+            return base.Channel.LoadImageDataAsync(imgId);
         }
     }
 }

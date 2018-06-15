@@ -14,4 +14,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MsqWorklistItem" nillable="true" type="tns:MsqWorklistItem" />
+  <xs:complexType name="MsqImageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcquisitionDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MsqImgId" type="xs:int" />
+      <xs:element minOccurs="0" name="MsqPatId1" type="xs:int" />
+      <xs:element minOccurs="0" name="MsqReferenceImgId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MsqRegistrationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MsqImageInfo" nillable="true" type="tns:MsqImageInfo" />
+  <xs:complexType name="MsqImageData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Height" type="xs:int" />
+      <xs:element minOccurs="0" name="MsqImgId" type="xs:int" />
+      <xs:element minOccurs="0" name="Pixels" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MsqImageData" nillable="true" type="tns:MsqImageData" />
 </xs:schema>
