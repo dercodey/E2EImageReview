@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EndToEndImageReviewManager.EmzWorklistInteractionManagerService {
+namespace ImageWorkListAggregatorManager.EmzImagingInteractionManagerService {
     using System.Runtime.Serialization;
     using System;
     
@@ -293,76 +293,76 @@ namespace EndToEndImageReviewManager.EmzWorklistInteractionManagerService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmzWorklistInteractionManagerService.IWorklistInteractionManager")]
-    public interface IWorklistInteractionManager {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EmzImagingInteractionManagerService.IImagingInteractionManager")]
+    public interface IImagingInteractionManager {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaffResponse")]
-        System.Collections.Generic.List<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.WorklistItem> GetWorklistForStaff(System.Guid staffId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImagingInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IImagingInteractionManager/GetWorklistForStaffResponse")]
+        System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.WorklistItem> GetWorklistForStaff(System.Guid staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaffResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImagingInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IImagingInteractionManager/GetWorklistForStaffResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageInfo", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageInfoResponse")]
-        EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageInfo GetImageInfo(System.Guid imageId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImagingInteractionManager/GetImageInfo", ReplyAction="http://tempuri.org/IImagingInteractionManager/GetImageInfoResponse")]
+        ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageInfo GetImageInfo(System.Guid imageId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageInfo", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageInfoResponse")]
-        System.Threading.Tasks.Task<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageInfo> GetImageInfoAsync(System.Guid imageId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImagingInteractionManager/GetImageInfo", ReplyAction="http://tempuri.org/IImagingInteractionManager/GetImageInfoResponse")]
+        System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageInfo> GetImageInfoAsync(System.Guid imageId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReview", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReviewResponse")]
-        EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageData GetImageDataForReview(System.Guid imageId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImagingInteractionManager/GetImageDataForReview", ReplyAction="http://tempuri.org/IImagingInteractionManager/GetImageDataForReviewResponse")]
+        ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageData GetImageDataForReview(System.Guid imageId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReview", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReviewResponse")]
-        System.Threading.Tasks.Task<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageData> GetImageDataForReviewAsync(System.Guid imageId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IImagingInteractionManager/GetImageDataForReview", ReplyAction="http://tempuri.org/IImagingInteractionManager/GetImageDataForReviewResponse")]
+        System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageData> GetImageDataForReviewAsync(System.Guid imageId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IWorklistInteractionManagerChannel : EndToEndImageReviewManager.EmzWorklistInteractionManagerService.IWorklistInteractionManager, System.ServiceModel.IClientChannel {
+    public interface IImagingInteractionManagerChannel : ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.IImagingInteractionManager, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WorklistInteractionManagerClient : System.ServiceModel.ClientBase<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.IWorklistInteractionManager>, EndToEndImageReviewManager.EmzWorklistInteractionManagerService.IWorklistInteractionManager {
+    public partial class ImagingInteractionManagerClient : System.ServiceModel.ClientBase<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.IImagingInteractionManager>, ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.IImagingInteractionManager {
         
-        public WorklistInteractionManagerClient() {
+        public ImagingInteractionManagerClient() {
         }
         
-        public WorklistInteractionManagerClient(string endpointConfigurationName) : 
+        public ImagingInteractionManagerClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public WorklistInteractionManagerClient(string endpointConfigurationName, string remoteAddress) : 
+        public ImagingInteractionManagerClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public WorklistInteractionManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ImagingInteractionManagerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public WorklistInteractionManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ImagingInteractionManagerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.WorklistItem> GetWorklistForStaff(System.Guid staffId) {
+        public System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.WorklistItem> GetWorklistForStaff(System.Guid staffId) {
             return base.Channel.GetWorklistForStaff(staffId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId) {
             return base.Channel.GetWorklistForStaffAsync(staffId);
         }
         
-        public EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageInfo GetImageInfo(System.Guid imageId) {
+        public ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageInfo GetImageInfo(System.Guid imageId) {
             return base.Channel.GetImageInfo(imageId);
         }
         
-        public System.Threading.Tasks.Task<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageInfo> GetImageInfoAsync(System.Guid imageId) {
+        public System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageInfo> GetImageInfoAsync(System.Guid imageId) {
             return base.Channel.GetImageInfoAsync(imageId);
         }
         
-        public EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageData GetImageDataForReview(System.Guid imageId) {
+        public ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageData GetImageDataForReview(System.Guid imageId) {
             return base.Channel.GetImageDataForReview(imageId);
         }
         
-        public System.Threading.Tasks.Task<EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageData> GetImageDataForReviewAsync(System.Guid imageId) {
+        public System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzImagingInteractionManagerService.ImageData> GetImageDataForReviewAsync(System.Guid imageId) {
             return base.Channel.GetImageDataForReviewAsync(imageId);
         }
     }

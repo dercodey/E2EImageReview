@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndToEndImageReviewApp", "E
 		{651A4F37-B01C-43B9-977F-965996309E77} = {651A4F37-B01C-43B9-977F-965996309E77}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndToEndImageReviewManager", "EndToEndImageReviewManager\EndToEndImageReviewManager.csproj", "{FBE8671D-0E32-4C87-967E-61574B468DF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageReviewManager", "EndToEndImageReviewManager\ImageReviewManager.csproj", "{FBE8671D-0E32-4C87-967E-61574B468DF3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DE9508F4-C937-46E3-8169-D2A6FCCB14A9} = {DE9508F4-C937-46E3-8169-D2A6FCCB14A9}
 	EndProjectSection
@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorkListAggregatorMana
 		{DE9508F4-C937-46E3-8169-D2A6FCCB14A9} = {DE9508F4-C937-46E3-8169-D2A6FCCB14A9}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmzWorklistInteractionManager", "EmzWorklistInteractionManager\EmzWorklistInteractionManager.csproj", "{DE9508F4-C937-46E3-8169-D2A6FCCB14A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmzImagingInteractionManager", "EmzWorklistInteractionManager\EmzImagingInteractionManager.csproj", "{DE9508F4-C937-46E3-8169-D2A6FCCB14A9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{43765D18-9A75-4F4C-89B9-260E3B704D5A} = {43765D18-9A75-4F4C-89B9-260E3B704D5A}
 	EndProjectSection

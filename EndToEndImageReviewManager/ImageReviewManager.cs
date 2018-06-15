@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using EndToEndImageReviewManager.EmzWorklistInteractionManagerService;
+using EndToEndImageReviewManager.EmzImagingInteractionManagerService;
 
 namespace EndToEndImageReviewManager
 {
@@ -10,7 +10,7 @@ namespace EndToEndImageReviewManager
     {
         public async Task<ImageInfo> GetImageInfo(Guid imageId)
         {
-            var client = new WorklistInteractionManagerClient();
+            var client = new ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(imageId);
             return new ImageInfo()
             {
@@ -23,10 +23,10 @@ namespace EndToEndImageReviewManager
 
         public async Task<ImageReviewResponse> ReviewImage(ImageReviewRequest request)
         {
-            var client = new WorklistInteractionManagerClient();
+            var client = new ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(request.ImageId);
-            EmzWorklistInteractionManagerService.ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
-            EmzWorklistInteractionManagerService.ImageData referenceImageData = null;
+            EmzImagingInteractionManagerService.ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
+            EmzImagingInteractionManagerService.ImageData referenceImageData = null;
             
 
             return new ImageReviewResponse()

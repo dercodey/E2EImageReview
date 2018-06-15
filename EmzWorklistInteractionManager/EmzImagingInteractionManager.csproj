@@ -49,10 +49,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="IWorklistInteractionManager.cs" />
+    <Compile Include="IImagingInteractionManager.cs" />
     <Compile Include="MsqMappingHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorklistInteractionManagerService.cs" />
+    <Compile Include="ImagingInteractionManagerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

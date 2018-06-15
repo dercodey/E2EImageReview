@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 
+using ImageWorkListAggregatorManager.EmzImagingInteractionManagerService;
+ 
 namespace ImageWorkListAggregatorManager
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
@@ -13,7 +12,7 @@ namespace ImageWorkListAggregatorManager
     {
         public async Task<List<WorklistItem>> GetWorklistForStaff(Guid staffId)
         {
-            var client = new EmzWorklistInteractionService.WorklistInteractionManagerClient();
+            var client = new ImagingInteractionManagerClient();
             var resultList = await client.GetWorklistForStaffAsync(staffId);
             client.Close();
 

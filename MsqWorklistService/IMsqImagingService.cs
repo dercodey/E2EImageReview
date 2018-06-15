@@ -8,7 +8,7 @@ using System.Text;
 namespace MsqWorklistService
 {
     [ServiceContract]
-    public interface IMsqWorklistService
+    public interface IMsqImagingService
     {
         [OperationContract]
         List<MsqWorklistItem> GetWorklistForStaff(int staffId);

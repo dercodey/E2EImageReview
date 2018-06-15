@@ -8,7 +8,7 @@ using System.Text;
 namespace MsqWorklistService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    public class MsqWorklistService : IMsqWorklistService
+    public class MsqImagingService : IMsqImagingService
     {
         public List<MsqWorklistItem> GetWorklistForStaff(int staffId)
         {

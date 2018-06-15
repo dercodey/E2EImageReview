@@ -325,52 +325,52 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MsqWorklistService.IMsqWorklistService")]
-    public interface IMsqWorklistService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MsqWorklistService.IMsqImagingService")]
+    public interface IMsqImagingService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqWorklistService/GetWorklistForStaffResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqImagingService/GetWorklistForStaffResponse")]
         System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqWorklistService/GetWorklistForStaffResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqImagingService/GetWorklistForStaffResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqWorklistService/GetImageInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqImagingService/GetImageInfoResponse")]
         EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqWorklistService/GetImageInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqImagingService/GetImageInfoResponse")]
         System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/LoadImageData", ReplyAction="http://tempuri.org/IMsqWorklistService/LoadImageDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/LoadImageData", ReplyAction="http://tempuri.org/IMsqImagingService/LoadImageDataResponse")]
         EmzWorklistInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqWorklistService/LoadImageData", ReplyAction="http://tempuri.org/IMsqWorklistService/LoadImageDataResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/LoadImageData", ReplyAction="http://tempuri.org/IMsqImagingService/LoadImageDataResponse")]
         System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMsqWorklistServiceChannel : EmzWorklistInteractionManager.MsqWorklistService.IMsqWorklistService, System.ServiceModel.IClientChannel {
+    public interface IMsqImagingServiceChannel : EmzWorklistInteractionManager.MsqWorklistService.IMsqImagingService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MsqWorklistServiceClient : System.ServiceModel.ClientBase<EmzWorklistInteractionManager.MsqWorklistService.IMsqWorklistService>, EmzWorklistInteractionManager.MsqWorklistService.IMsqWorklistService {
+    public partial class MsqImagingServiceClient : System.ServiceModel.ClientBase<EmzWorklistInteractionManager.MsqWorklistService.IMsqImagingService>, EmzWorklistInteractionManager.MsqWorklistService.IMsqImagingService {
         
-        public MsqWorklistServiceClient() {
+        public MsqImagingServiceClient() {
         }
         
-        public MsqWorklistServiceClient(string endpointConfigurationName) : 
+        public MsqImagingServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public MsqWorklistServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public MsqImagingServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MsqWorklistServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MsqImagingServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public MsqWorklistServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MsqImagingServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

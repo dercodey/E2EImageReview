@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="ImageInfo" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageInfo, Connected Services.EmzWorklistInteractionService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>EndToEndImageReviewManager.EmzImagingInteractionManagerService.ImageInfo, Connected Services.EmzImagingInteractionManagerService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

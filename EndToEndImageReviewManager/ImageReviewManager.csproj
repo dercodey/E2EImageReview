@@ -44,7 +44,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\EmzWorklistInteractionManagerService\Reference.cs">
+    <Compile Include="Connected Services\EmzImagingInteractionManagerService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -55,23 +55,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\EmzWorklistInteractionManager.xsd">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\EmzWorklistInteractionManager.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageData.datasource">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\EndToEndImageReviewManager.EmzImagingInteractionManagerService.ImageData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\EndToEndImageReviewManager.EmzWorklistInteractionManagerService.ImageInfo.datasource">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\EndToEndImageReviewManager.EmzImagingInteractionManagerService.ImageInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\EndToEndImageReviewManager.EmzWorklistInteractionManagerService.WorklistItem.datasource">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\EndToEndImageReviewManager.EmzImagingInteractionManagerService.WorklistItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\service.wsdl" />
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\service.xsd">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\service.wsdl" />
+    <None Include="Connected Services\EmzImagingInteractionManagerService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\service1.xsd">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -79,16 +79,16 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\EmzWorklistInteractionManagerService\" />
+    <WCFMetadataStorage Include="Connected Services\EmzImagingInteractionManagerService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\configuration91.svcinfo" />
+    <None Include="Connected Services\EmzImagingInteractionManagerService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\configuration.svcinfo" />
+    <None Include="Connected Services\EmzImagingInteractionManagerService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\EmzWorklistInteractionManagerService\Reference.svcmap">
+    <None Include="Connected Services\EmzImagingInteractionManagerService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
