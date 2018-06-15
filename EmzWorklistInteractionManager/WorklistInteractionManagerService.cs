@@ -24,6 +24,7 @@ namespace EmzWorklistInteractionManager
                 new WorklistItem()
                 {
                     PatientId = MsqMappingHelper.MapIdFromMsq(EntityType.Patient, item.MsqPatId1),
+                    PatientName = item.PatientName,
                     ImageId = MsqMappingHelper.MapIdFromMsq(EntityType.Image, item.MsqImgId),
                     AcquisitionDateTime = item.AcquisitionDateTime
                 });

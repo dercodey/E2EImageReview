@@ -22,6 +22,7 @@ namespace ImageWorkListAggregatorManager
                 new WorklistItem()
                 {
                     PatientId = item.PatientId,
+                    PatientName = item.PatientName,
                     ImageId = item.ImageId,
                     AcquisitionDateTime = item.AcquisitionDateTime
                 });

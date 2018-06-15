@@ -11,6 +11,7 @@
       <xs:element minOccurs="0" name="AcquisitionDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="MsqImgId" type="xs:int" />
       <xs:element minOccurs="0" name="MsqPatId1" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MsqWorklistItem" nillable="true" type="tns:MsqWorklistItem" />

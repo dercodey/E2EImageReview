@@ -12,7 +12,26 @@
       <xs:element minOccurs="0" name="AcquisitionDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
       <xs:element minOccurs="0" name="PatientId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WorklistItem" nillable="true" type="tns:WorklistItem" />
+  <xs:complexType name="ImageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcquisitionDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageInfo" nillable="true" type="tns:ImageInfo" />
+  <xs:complexType name="ImageData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Height" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Pixels" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageData" nillable="true" type="tns:ImageData" />
 </xs:schema>

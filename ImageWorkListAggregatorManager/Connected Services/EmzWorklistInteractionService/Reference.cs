@@ -31,6 +31,9 @@ namespace ImageWorkListAggregatorManager.EmzWorklistInteractionService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid PatientIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientNameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -80,6 +83,205 @@ namespace ImageWorkListAggregatorManager.EmzWorklistInteractionService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientName {
+            get {
+                return this.PatientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientNameField, value) != true)) {
+                    this.PatientNameField = value;
+                    this.RaisePropertyChanged("PatientName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImageInfo", Namespace="http://schemas.datacontract.org/2004/07/EmzWorklistInteractionManager")]
+    [System.SerializableAttribute()]
+    public partial class ImageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime AcquisitionDateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid ImageIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid PatientIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime AcquisitionDateTime {
+            get {
+                return this.AcquisitionDateTimeField;
+            }
+            set {
+                if ((this.AcquisitionDateTimeField.Equals(value) != true)) {
+                    this.AcquisitionDateTimeField = value;
+                    this.RaisePropertyChanged("AcquisitionDateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ImageId {
+            get {
+                return this.ImageIdField;
+            }
+            set {
+                if ((this.ImageIdField.Equals(value) != true)) {
+                    this.ImageIdField = value;
+                    this.RaisePropertyChanged("ImageId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid PatientId {
+            get {
+                return this.PatientIdField;
+            }
+            set {
+                if ((this.PatientIdField.Equals(value) != true)) {
+                    this.PatientIdField = value;
+                    this.RaisePropertyChanged("PatientId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientName {
+            get {
+                return this.PatientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientNameField, value) != true)) {
+                    this.PatientNameField = value;
+                    this.RaisePropertyChanged("PatientName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImageData", Namespace="http://schemas.datacontract.org/2004/07/EmzWorklistInteractionManager")]
+    [System.SerializableAttribute()]
+    public partial class ImageData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid ImageIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] PixelsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WidthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ImageId {
+            get {
+                return this.ImageIdField;
+            }
+            set {
+                if ((this.ImageIdField.Equals(value) != true)) {
+                    this.ImageIdField = value;
+                    this.RaisePropertyChanged("ImageId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Pixels {
+            get {
+                return this.PixelsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PixelsField, value) != true)) {
+                    this.PixelsField = value;
+                    this.RaisePropertyChanged("Pixels");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Width {
+            get {
+                return this.WidthField;
+            }
+            set {
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -99,6 +301,18 @@ namespace ImageWorkListAggregatorManager.EmzWorklistInteractionService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaffResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageInfo", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageInfoResponse")]
+        ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageInfo GetImageInfo(System.Guid imageId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageInfo", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageInfoResponse")]
+        System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageInfo> GetImageInfoAsync(System.Guid imageId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReview", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReviewResponse")]
+        ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageData GetImageDataForReview(System.Guid imageId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReview", ReplyAction="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReviewResponse")]
+        System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageData> GetImageDataForReviewAsync(System.Guid imageId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +348,22 @@ namespace ImageWorkListAggregatorManager.EmzWorklistInteractionService {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem>> GetWorklistForStaffAsync(System.Guid staffId) {
             return base.Channel.GetWorklistForStaffAsync(staffId);
+        }
+        
+        public ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageInfo GetImageInfo(System.Guid imageId) {
+            return base.Channel.GetImageInfo(imageId);
+        }
+        
+        public System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageInfo> GetImageInfoAsync(System.Guid imageId) {
+            return base.Channel.GetImageInfoAsync(imageId);
+        }
+        
+        public ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageData GetImageDataForReview(System.Guid imageId) {
+            return base.Channel.GetImageDataForReview(imageId);
+        }
+        
+        public System.Threading.Tasks.Task<ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageData> GetImageDataForReviewAsync(System.Guid imageId) {
+            return base.Channel.GetImageDataForReviewAsync(imageId);
         }
     }
 }

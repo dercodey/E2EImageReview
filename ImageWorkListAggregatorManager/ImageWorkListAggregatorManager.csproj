@@ -58,6 +58,12 @@
     <None Include="Connected Services\EmzWorklistInteractionService\EmzWorklistInteractionManager.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\EmzWorklistInteractionService\ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmzWorklistInteractionService\ImageWorkListAggregatorManager.EmzWorklistInteractionService.ImageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EmzWorklistInteractionService\ImageWorkListAggregatorManager.EmzWorklistInteractionService.WorklistItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

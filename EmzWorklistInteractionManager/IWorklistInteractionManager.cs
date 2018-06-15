@@ -31,6 +31,9 @@ namespace EmzWorklistInteractionManager
         public Guid PatientId { get; set; }
 
         [DataMember]
+        public string PatientName { get; set; }
+
+        [DataMember]
         public Guid ImageId { get; set; }
 
         [DataMember]

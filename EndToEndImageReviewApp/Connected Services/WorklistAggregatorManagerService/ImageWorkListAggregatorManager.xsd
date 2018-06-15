@@ -12,6 +12,7 @@
       <xs:element minOccurs="0" name="AcquisitionDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
       <xs:element minOccurs="0" name="PatientId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="WorklistItem" nillable="true" type="tns:WorklistItem" />

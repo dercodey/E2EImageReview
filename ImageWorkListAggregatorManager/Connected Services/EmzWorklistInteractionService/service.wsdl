@@ -13,16 +13,54 @@
   <wsdl:message name="IWorklistInteractionManager_GetWorklistForStaff_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetWorklistForStaffResponse" />
   </wsdl:message>
+  <wsdl:message name="IWorklistInteractionManager_GetImageInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWorklistInteractionManager_GetImageInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWorklistInteractionManager_GetImageDataForReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageDataForReview" />
+  </wsdl:message>
+  <wsdl:message name="IWorklistInteractionManager_GetImageDataForReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageDataForReviewResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWorklistInteractionManager">
     <wsdl:operation name="GetWorklistForStaff">
       <wsdl:input wsaw:Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff" message="tns:IWorklistInteractionManager_GetWorklistForStaff_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaffResponse" message="tns:IWorklistInteractionManager_GetWorklistForStaff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWorklistInteractionManager/GetImageInfo" message="tns:IWorklistInteractionManager_GetImageInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWorklistInteractionManager/GetImageInfoResponse" message="tns:IWorklistInteractionManager_GetImageInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageDataForReview">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReview" message="tns:IWorklistInteractionManager_GetImageDataForReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReviewResponse" message="tns:IWorklistInteractionManager_GetImageDataForReview_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWorklistInteractionManager" type="tns:IWorklistInteractionManager">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetWorklistForStaff">
       <soap:operation soapAction="http://tempuri.org/IWorklistInteractionManager/GetWorklistForStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageInfo">
+      <soap:operation soapAction="http://tempuri.org/IWorklistInteractionManager/GetImageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageDataForReview">
+      <soap:operation soapAction="http://tempuri.org/IWorklistInteractionManager/GetImageDataForReview" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

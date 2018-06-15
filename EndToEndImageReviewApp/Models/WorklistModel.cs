@@ -17,7 +17,7 @@ namespace EndToEndImageReviewApp
                     new WorklistItem()
                     {
                         PatientId = item.PatientId,
-                        PatientName = string.Empty,
+                        PatientName = item.PatientName,
                         ImageId = item.ImageId,
                         AcquisitionDateTime = item.AcquisitionDateTime
                     }).ToList();

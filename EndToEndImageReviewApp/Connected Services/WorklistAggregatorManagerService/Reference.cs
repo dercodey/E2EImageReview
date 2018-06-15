@@ -31,6 +31,9 @@ namespace EndToEndImageReviewApp.WorklistAggregatorManagerService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid PatientIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientNameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -76,6 +79,19 @@ namespace EndToEndImageReviewApp.WorklistAggregatorManagerService {
                 if ((this.PatientIdField.Equals(value) != true)) {
                     this.PatientIdField = value;
                     this.RaisePropertyChanged("PatientId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientName {
+            get {
+                return this.PatientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientNameField, value) != true)) {
+                    this.PatientNameField = value;
+                    this.RaisePropertyChanged("PatientName");
                 }
             }
         }

@@ -27,6 +27,9 @@ namespace MsqWorklistService
         public int MsqPatId1 { get; set; }
 
         [DataMember]
+        public string PatientName { get; set; }
+
+        [DataMember]
         public int MsqImgId { get; set; }
 
         [DataMember]

@@ -31,6 +31,9 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int MsqPatId1Field;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientNameField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -76,6 +79,19 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
                 if ((this.MsqPatId1Field.Equals(value) != true)) {
                     this.MsqPatId1Field = value;
                     this.RaisePropertyChanged("MsqPatId1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientName {
+            get {
+                return this.PatientNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientNameField, value) != true)) {
+                    this.PatientNameField = value;
+                    this.RaisePropertyChanged("PatientName");
                 }
             }
         }
