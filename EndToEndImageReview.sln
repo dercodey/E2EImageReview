@@ -5,10 +5,14 @@ VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndToEndImageReviewApp", "EndToEndImageReviewApp\EndToEndImageReviewApp.csproj", "{6EA2C0C8-7EFE-4412-BD6A-CC8F98AAD999}"
 	ProjectSection(ProjectDependencies) = postProject
+		{FBE8671D-0E32-4C87-967E-61574B468DF3} = {FBE8671D-0E32-4C87-967E-61574B468DF3}
 		{651A4F37-B01C-43B9-977F-965996309E77} = {651A4F37-B01C-43B9-977F-965996309E77}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndToEndImageReviewManager", "EndToEndImageReviewManager\EndToEndImageReviewManager.csproj", "{FBE8671D-0E32-4C87-967E-61574B468DF3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE9508F4-C937-46E3-8169-D2A6FCCB14A9} = {DE9508F4-C937-46E3-8169-D2A6FCCB14A9}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorkListAggregatorManager", "ImageWorkListAggregatorManager\ImageWorkListAggregatorManager.csproj", "{651A4F37-B01C-43B9-977F-965996309E77}"
 	ProjectSection(ProjectDependencies) = postProject

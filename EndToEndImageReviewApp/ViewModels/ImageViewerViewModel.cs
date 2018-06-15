@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Input;
+using System.Threading.Tasks;
 
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 
 using EndToEndImageReviewApp.Events;
-
+using System.Text;
 
 namespace EndToEndImageReviewApp.ViewModels
 {
@@ -16,6 +17,7 @@ namespace EndToEndImageReviewApp.ViewModels
     public class ImageViewerViewModel : BindableBase
     {
         IEventAggregator _eventAggregator;
+        TaskScheduler _uiScheduler;
 
         /// <summary>
         /// construct the viewer view model, creating commands and subscribing to events
@@ -39,6 +41,9 @@ namespace EndToEndImageReviewApp.ViewModels
                             ImageId = eventArgs.ImageId,
                             AcquisitionDateTime = eventArgs.AcquisitionDateTime,
                         }));
+
+            // capture UI scheduler for later continuations on UI thread
+            _uiScheduler = TaskScheduler.FromCurrentSynchronizationContext();
         }
 
         /// <summary>
@@ -62,8 +67,18 @@ namespace EndToEndImageReviewApp.ViewModels
         /// <param name="args"></param>
         void LoadImage(LoadImageCommandArgs args)
         {
-            ImageInfoText = 
-                string.Format($"Image loaded:\nguid = {args.ImageId}\nwhen = {args.AcquisitionDateTime}");
+            var client = new ImageReviewManagerService.ImageReviewManagerClient();
+            client
+                .GetImageInfoAsync(args.ImageId)
+                .ContinueWith(task =>
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Image loaded:");
+                    sb.AppendLine($"ImageId = {args.ImageId}");
+                    sb.AppendLine($"When = {args.AcquisitionDateTime}");
+                    sb.AppendLine($"Patient Name = {task.Result.PatientName}");
+                    ImageInfoText = sb.ToString();
+                }, _uiScheduler);
         }
     }
 

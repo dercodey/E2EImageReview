@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace EndToEndImageReviewManager
 {
@@ -12,10 +13,10 @@ namespace EndToEndImageReviewManager
     public interface IImageReviewManager
     {
         [OperationContract]
-        ImageInfo GetImageInfo(Guid imageId);
+        Task<ImageInfo> GetImageInfo(Guid imageId);
 
         [OperationContract]
-        ImageReviewResponse ReviewImage(ImageReviewRequest request);
+        Task<ImageReviewResponse> ReviewImage(ImageReviewRequest request);
     }
 
     [DataContract]

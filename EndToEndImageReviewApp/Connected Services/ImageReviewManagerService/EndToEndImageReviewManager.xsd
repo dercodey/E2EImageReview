@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/EndToEndImageReviewManager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EndToEndImageReviewManager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ImageInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcquisitionDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageInfo" nillable="true" type="tns:ImageInfo" />
+  <xs:complexType name="ImageReviewRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageReviewRequest" nillable="true" type="tns:ImageReviewRequest" />
+  <xs:complexType name="ImageReviewResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DailyImage" nillable="true" type="tns:ImageData" />
+      <xs:element minOccurs="0" name="ReferenceImage" nillable="true" type="tns:ImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageReviewResponse" nillable="true" type="tns:ImageReviewResponse" />
+  <xs:complexType name="ImageData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Height" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Pixels" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageData" nillable="true" type="tns:ImageData" />
+</xs:schema>

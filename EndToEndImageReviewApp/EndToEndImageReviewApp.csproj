@@ -82,6 +82,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Connected Services\ImageReviewManagerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\WorklistAggregatorManagerService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,6 +153,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ImageReviewManagerService\EndToEndImageReviewApp.ImageReviewManagerService.ImageInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ImageReviewManagerService\EndToEndImageReviewApp.ImageReviewManagerService.ImageReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ImageReviewManagerService\EndToEndImageReviewManager.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ImageReviewManagerService\service.wsdl" />
+    <None Include="Connected Services\ImageReviewManagerService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ImageReviewManagerService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WorklistAggregatorManagerService\EndToEndImageReviewApp.WorklistAggregatorManagerService.WorklistItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -173,8 +194,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="Connected Services\ImageReviewManagerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ImageReviewManagerService\" />
     <WCFMetadataStorage Include="Connected Services\WorklistAggregatorManagerService\" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +209,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\WorklistAggregatorManagerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ImageReviewManagerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ImageReviewManagerService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
