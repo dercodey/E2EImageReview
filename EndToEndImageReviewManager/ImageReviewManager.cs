@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
+
+using EndToEndImageReviewManager.EmzWorklistInteractionManagerService;
 
 namespace EndToEndImageReviewManager
 {
@@ -13,7 +10,7 @@ namespace EndToEndImageReviewManager
     {
         public async Task<ImageInfo> GetImageInfo(Guid imageId)
         {
-            var client = new EmzWorklistInteractionManagerService.WorklistInteractionManagerClient();
+            var client = new WorklistInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(imageId);
             return new ImageInfo()
             {
@@ -26,7 +23,22 @@ namespace EndToEndImageReviewManager
 
         public async Task<ImageReviewResponse> ReviewImage(ImageReviewRequest request)
         {
-            throw new NotImplementedException();
+            var client = new WorklistInteractionManagerClient();
+            var imageInfo = await client.GetImageInfoAsync(request.ImageId);
+            EmzWorklistInteractionManagerService.ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
+            EmzWorklistInteractionManagerService.ImageData referenceImageData = null;
+            
+
+            return new ImageReviewResponse()
+            {
+                DailyImage = new ImageData()
+                {
+                    ImageId = dailyImageData.ImageId,
+                    Height = dailyImageData.Height,
+                    Width = dailyImageData.Width,
+                    Pixels = dailyImageData.Pixels,                    
+                },
+            };
         }
     }
 }

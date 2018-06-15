@@ -50,9 +50,19 @@ namespace EmzWorklistInteractionManager
             };
         }
 
-        public Task<ImageData> GetImageDataForReview(Guid imageId)
+        public async Task<ImageData> GetImageDataForReview(Guid imageId)
         {
-            throw new NotImplementedException();
+            var msqImgId = MsqMappingHelper.MapIdToMsq(EntityType.Image, imageId);
+
+            var client = new MsqWorklistService.MsqWorklistServiceClient();
+            var msqImageData = await client.LoadImageDataAsync(msqImgId);
+            return new ImageData()
+            {
+                ImageId = imageId,
+                Height = msqImageData.Height,
+                Width = msqImageData.Width,
+                Pixels = msqImageData.Pixels,
+            };
         }
     }
 }

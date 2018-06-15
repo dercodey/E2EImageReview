@@ -8,6 +8,7 @@ using Prism.Mvvm;
 
 using EndToEndImageReviewApp.Events;
 using System.Text;
+using EndToEndImageReviewApp.ImageReviewManagerService;
 
 namespace EndToEndImageReviewApp.ViewModels
 {
@@ -56,6 +57,8 @@ namespace EndToEndImageReviewApp.ViewModels
         }
         string _imageInfoText;
 
+        public string ImagePixelText { get; set; }
+
         /// <summary>
         /// the load image command can be bound to a button (but needs parameters)
         /// </summary>
@@ -67,7 +70,7 @@ namespace EndToEndImageReviewApp.ViewModels
         /// <param name="args"></param>
         void LoadImage(LoadImageCommandArgs args)
         {
-            var client = new ImageReviewManagerService.ImageReviewManagerClient();
+            var client = new ImageReviewManagerClient();
             client
                 .GetImageInfoAsync(args.ImageId)
                 .ContinueWith(task =>
@@ -78,6 +81,16 @@ namespace EndToEndImageReviewApp.ViewModels
                     sb.AppendLine($"When = {args.AcquisitionDateTime}");
                     sb.AppendLine($"Patient Name = {task.Result.PatientName}");
                     ImageInfoText = sb.ToString();
+                }, _uiScheduler);
+
+            client
+                .ReviewImageAsync(new ImageReviewRequest()
+                {
+                    ImageId = args.ImageId
+                })
+                .ContinueWith(task =>
+                {
+                    ImagePixelText = task.Result.DailyImage.Pixels.ToString();
                 }, _uiScheduler);
         }
     }
