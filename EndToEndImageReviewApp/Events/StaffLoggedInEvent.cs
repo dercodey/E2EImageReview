@@ -3,7 +3,8 @@ using Prism.Events;
 
 namespace EndToEndImageReviewApp.Events
 {
-    public class StaffLoggedInEvent : PubSubEvent<StaffLoggedInEventArgs>
+    public class StaffLoggedInEvent 
+        : PubSubEvent<StaffLoggedInEventArgs>
     {
     }
 

@@ -41,7 +41,8 @@ namespace EndToEndImageReviewApp.ViewModels
                 .Publish(
                     new WorklistItemSelectedEventArgs()
                     {
-                        ImageId = worklistItem.ImageId
+                        ImageId = worklistItem.ImageId,
+                        AcquisitionDateTime = worklistItem.AcquisitionDateTime,
                     });
         }
 

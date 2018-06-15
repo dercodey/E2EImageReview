@@ -88,11 +88,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Events\StaffLoggedInEvent.cs" />
+    <Compile Include="ImageViewerModule.cs" />
     <Compile Include="Models\WorklistItem.cs" />
     <Compile Include="Models\WorklistModel.cs" />
+    <Compile Include="ViewModels\ImageViewerViewModel.cs" />
     <Compile Include="ViewModels\StaffLoginViewModel.cs" />
     <Compile Include="Events\WorklistItemSelectedEvent.cs" />
     <Compile Include="ViewModels\WorklistViewModel.cs" />
+    <Compile Include="Views\ImageViewerView.xaml.cs">
+      <DependentUpon>ImageViewerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StaffLoginView.xaml.cs">
       <DependentUpon>StaffLoginView.xaml</DependentUpon>
     </Compile>
@@ -112,6 +117,10 @@
       <DependentUpon>Shell.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ImageViewerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StaffLoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

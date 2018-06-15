@@ -21,8 +21,12 @@ namespace EndToEndImageReviewApp
         protected override void ConfigureModuleCatalog()
         {
             base.ConfigureModuleCatalog();
-            var moduleInfo = new ModuleInfo("WorklistModule", typeof(WorklistModule).AssemblyQualifiedName);
-            this.ModuleCatalog.AddModule(moduleInfo);
+            var worklistModuleInfo = new ModuleInfo("WorklistModule", typeof(WorklistModule).AssemblyQualifiedName);
+            this.ModuleCatalog.AddModule(worklistModuleInfo);
+
+            var viewerModuleInfo = new ModuleInfo("ImageViewerModule", typeof(ImageViewerModule).AssemblyQualifiedName);
+            this.ModuleCatalog.AddModule(viewerModuleInfo);
+
         }
     }
 }
