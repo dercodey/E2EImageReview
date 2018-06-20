@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EmzImagingInteractionManager.Contracts;
-using EmzWorklistInteractionManager.MsqWorklistService;
+using EmzImagingInteractionManager.MsqWorklistService;
 
 namespace EmzImagingInteractionManager
 {

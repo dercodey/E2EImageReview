@@ -15,7 +15,7 @@ namespace EndToEndImageReviewApp.ImageReviewManagerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImageInfo", Namespace="http://schemas.datacontract.org/2004/07/EndToEndImageReviewManager")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImageInfo", Namespace="http://schemas.datacontract.org/2004/07/ImageReviewManager")]
     [System.SerializableAttribute()]
     public partial class ImageInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -108,7 +108,7 @@ namespace EndToEndImageReviewApp.ImageReviewManagerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImageReviewRequest", Namespace="http://schemas.datacontract.org/2004/07/EndToEndImageReviewManager")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImageReviewRequest", Namespace="http://schemas.datacontract.org/2004/07/ImageReviewManager")]
     [System.SerializableAttribute()]
     public partial class ImageReviewRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -153,7 +153,7 @@ namespace EndToEndImageReviewApp.ImageReviewManagerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImageReviewResponse", Namespace="http://schemas.datacontract.org/2004/07/EndToEndImageReviewManager")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImageReviewResponse", Namespace="http://schemas.datacontract.org/2004/07/ImageReviewManager")]
     [System.SerializableAttribute()]
     public partial class ImageReviewResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -214,7 +214,7 @@ namespace EndToEndImageReviewApp.ImageReviewManagerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ImageData", Namespace="http://schemas.datacontract.org/2004/07/EndToEndImageReviewManager")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ImageData", Namespace="http://schemas.datacontract.org/2004/07/ImageReviewManager")]
     [System.SerializableAttribute()]
     public partial class ImageData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

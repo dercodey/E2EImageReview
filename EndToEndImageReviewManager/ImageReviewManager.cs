@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 using EmzImagingInteractionManager.Contracts;
 
-namespace EndToEndImageReviewManager
+namespace ImageReviewManager
 {
     public class ImageReviewManager : IImageReviewManager
     {

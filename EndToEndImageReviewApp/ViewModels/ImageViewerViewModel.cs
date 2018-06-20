@@ -70,30 +70,28 @@ namespace EndToEndImageReviewApp.ViewModels
         /// <param name="args"></param>
         void LoadImage(LoadImageCommandArgs args)
         {
-            using (var client = new ImageReviewManagerClient())
-            {
-                client
-                    .GetImageInfoAsync(args.ImageId)
-                    .ContinueWith(task =>
-                    {
-                        StringBuilder sb = new StringBuilder();
-                        sb.AppendLine("Image loaded:");
-                        sb.AppendLine($"ImageId = {args.ImageId}");
-                        sb.AppendLine($"When = {args.AcquisitionDateTime}");
-                        sb.AppendLine($"Patient Name = {task.Result.PatientName}");
-                        ImageInfoText = sb.ToString();
-                    }, _uiScheduler);
+            var client = new ImageReviewManagerClient();
+            client
+                .GetImageInfoAsync(args.ImageId)
+                .ContinueWith(task =>
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Image loaded:");
+                    sb.AppendLine($"ImageId = {args.ImageId}");
+                    sb.AppendLine($"When = {args.AcquisitionDateTime}");
+                    sb.AppendLine($"Patient Name = {task.Result.PatientName}");
+                    ImageInfoText = sb.ToString();
+                }, _uiScheduler);
 
-                client
-                    .ReviewImageAsync(new ImageReviewRequest()
-                    {
-                        ImageId = args.ImageId
-                    })
-                    .ContinueWith(task =>
-                    {
-                        ImagePixelText = task.Result.DailyImage.Pixels.ToString();
-                    }, _uiScheduler);
-            }
+            client
+                .ReviewImageAsync(new ImageReviewRequest()
+                {
+                    ImageId = args.ImageId
+                })
+                .ContinueWith(task =>
+                {
+                    ImagePixelText = task.Result.DailyImage.Pixels.ToString();
+                }, _uiScheduler);
         }
     }
 

@@ -8,8 +8,8 @@
     <ProjectGuid>{DE9508F4-C937-46E3-8169-D2A6FCCB14A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmzWorklistInteractionManager</RootNamespace>
-    <AssemblyName>EmzWorklistInteractionManager</AssemblyName>
+    <RootNamespace>EmzImagingInteractionManager</RootNamespace>
+    <AssemblyName>EmzImagingInteractionManager</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -55,13 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\MsqWorklistService\EmzWorklistInteractionManager.MsqWorklistService.MsqImageData.datasource">
+    <None Include="Connected Services\MsqWorklistService\EmzImagingInteractionManager.MsqWorklistService.MsqImageData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MsqWorklistService\EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo.datasource">
+    <None Include="Connected Services\MsqWorklistService\EmzImagingInteractionManager.MsqWorklistService.MsqImageInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MsqWorklistService\EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem.datasource">
+    <None Include="Connected Services\MsqWorklistService\EmzImagingInteractionManager.MsqWorklistService.MsqWorklistItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\MsqWorklistService\MsqWorklistService.xsd">

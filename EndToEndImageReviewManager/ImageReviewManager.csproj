@@ -8,8 +8,8 @@
     <ProjectGuid>{FBE8671D-0E32-4C87-967E-61574B468DF3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EndToEndImageReviewManager</RootNamespace>
-    <AssemblyName>EndToEndImageReviewManager</AssemblyName>
+    <RootNamespace>ImageReviewManager</RootNamespace>
+    <AssemblyName>ImageReviewManager</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>

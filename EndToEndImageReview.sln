@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsqServices", "MsqServices"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmzImagingInteractionManager.Contracts", "EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj", "{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageReviewManager.Contracts", "ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj", "{170F4763-EBA7-40DB-B265-02F4B02DB8EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170F4763-EBA7-40DB-B265-02F4B02DB8EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170F4763-EBA7-40DB-B265-02F4B02DB8EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170F4763-EBA7-40DB-B265-02F4B02DB8EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170F4763-EBA7-40DB-B265-02F4B02DB8EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{DE9508F4-C937-46E3-8169-D2A6FCCB14A9} = {D1F2C1FF-F038-4654-BEC5-F9DC38E0E6BE}
 		{43765D18-9A75-4F4C-89B9-260E3B704D5A} = {7AAFD470-D248-4EB3-B068-FC862BBE7779}
 		{2A651ADF-C51A-484F-AD14-DAA20CC19BBF} = {D1F2C1FF-F038-4654-BEC5-F9DC38E0E6BE}
+		{170F4763-EBA7-40DB-B265-02F4B02DB8EE} = {D1F2C1FF-F038-4654-BEC5-F9DC38E0E6BE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA29C12F-BF7F-4E61-8A5A-59CE0A047E7A}

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EmzWorklistInteractionManager.MsqWorklistService {
+namespace EmzImagingInteractionManager.MsqWorklistService {
     using System.Runtime.Serialization;
     using System;
     
@@ -329,31 +329,31 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
     public interface IMsqImagingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqImagingService/GetWorklistForStaffResponse")]
-        System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId);
+        System.Collections.Generic.List<EmzImagingInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetWorklistForStaff", ReplyAction="http://tempuri.org/IMsqImagingService/GetWorklistForStaffResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<EmzImagingInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqImagingService/GetImageInfoResponse")]
-        EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId);
+        EmzImagingInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/GetImageInfo", ReplyAction="http://tempuri.org/IMsqImagingService/GetImageInfoResponse")]
-        System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId);
+        System.Threading.Tasks.Task<EmzImagingInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/LoadImageData", ReplyAction="http://tempuri.org/IMsqImagingService/LoadImageDataResponse")]
-        EmzWorklistInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId);
+        EmzImagingInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMsqImagingService/LoadImageData", ReplyAction="http://tempuri.org/IMsqImagingService/LoadImageDataResponse")]
-        System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId);
+        System.Threading.Tasks.Task<EmzImagingInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMsqImagingServiceChannel : EmzWorklistInteractionManager.MsqWorklistService.IMsqImagingService, System.ServiceModel.IClientChannel {
+    public interface IMsqImagingServiceChannel : EmzImagingInteractionManager.MsqWorklistService.IMsqImagingService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MsqImagingServiceClient : System.ServiceModel.ClientBase<EmzWorklistInteractionManager.MsqWorklistService.IMsqImagingService>, EmzWorklistInteractionManager.MsqWorklistService.IMsqImagingService {
+    public partial class MsqImagingServiceClient : System.ServiceModel.ClientBase<EmzImagingInteractionManager.MsqWorklistService.IMsqImagingService>, EmzImagingInteractionManager.MsqWorklistService.IMsqImagingService {
         
         public MsqImagingServiceClient() {
         }
@@ -374,27 +374,27 @@ namespace EmzWorklistInteractionManager.MsqWorklistService {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId) {
+        public System.Collections.Generic.List<EmzImagingInteractionManager.MsqWorklistService.MsqWorklistItem> GetWorklistForStaff(int staffId) {
             return base.Channel.GetWorklistForStaff(staffId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<EmzWorklistInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<EmzImagingInteractionManager.MsqWorklistService.MsqWorklistItem>> GetWorklistForStaffAsync(int staffId) {
             return base.Channel.GetWorklistForStaffAsync(staffId);
         }
         
-        public EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId) {
+        public EmzImagingInteractionManager.MsqWorklistService.MsqImageInfo GetImageInfo(int imgId) {
             return base.Channel.GetImageInfo(imgId);
         }
         
-        public System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId) {
+        public System.Threading.Tasks.Task<EmzImagingInteractionManager.MsqWorklistService.MsqImageInfo> GetImageInfoAsync(int imgId) {
             return base.Channel.GetImageInfoAsync(imgId);
         }
         
-        public EmzWorklistInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId) {
+        public EmzImagingInteractionManager.MsqWorklistService.MsqImageData LoadImageData(int imgId) {
             return base.Channel.LoadImageData(imgId);
         }
         
-        public System.Threading.Tasks.Task<EmzWorklistInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId) {
+        public System.Threading.Tasks.Task<EmzImagingInteractionManager.MsqWorklistService.MsqImageData> LoadImageDataAsync(int imgId) {
             return base.Channel.LoadImageDataAsync(imgId);
         }
     }
