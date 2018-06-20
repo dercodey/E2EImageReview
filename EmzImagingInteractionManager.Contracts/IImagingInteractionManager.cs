@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace EmzWorklistInteractionManager
+namespace EmzImagingInteractionManager.Contracts
 {
     [ServiceContract]
     public interface IImagingInteractionManager
@@ -21,7 +19,7 @@ namespace EmzWorklistInteractionManager
         Task<ImageData> GetImageDataForReviewAsync(Guid imageId);
     }
 
-    public interface IImagingInteractionManagerProxy : IImagingInteractionManager
+    public interface IImagingInteractionManagerWithSync : IImagingInteractionManager
     {
         List<WorklistItem> GetWorklistForStaff(Guid staffId);
 

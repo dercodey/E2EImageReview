@@ -93,6 +93,8 @@ namespace EndToEndImageReviewApp.ViewModels
         private void OnSelectedWorklistItem(object sender, EventArgs e)
         {
             var worklistItem = (WorklistItem)WorklistItems.CurrentItem;
+            if (worklistItem == null)
+                return;
 
             _eventAggregator
                 .GetEvent<WorklistItemSelectedEvent>()

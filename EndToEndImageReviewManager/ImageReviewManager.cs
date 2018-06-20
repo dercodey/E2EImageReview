@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using EndToEndImageReviewManager.EmzImagingInteractionManagerService;
+using EmzImagingInteractionManager.Contracts;
 
 namespace EndToEndImageReviewManager
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class ImageReviewManager : IImageReviewManager
     {
         public async Task<ImageInfo> GetImageInfoAsync(Guid imageId)
@@ -25,9 +24,9 @@ namespace EndToEndImageReviewManager
         {
             var client = new ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(request.ImageId);
-            EmzImagingInteractionManagerService.ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
-            EmzImagingInteractionManagerService.ImageData referenceImageData = null;
-            
+            EmzImagingInteractionManager.Contracts.ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
+            EmzImagingInteractionManager.Contracts.ImageData referenceImageData = null;
+
 
             return new ImageReviewResponse()
             {
@@ -36,8 +35,9 @@ namespace EndToEndImageReviewManager
                     ImageId = dailyImageData.ImageId,
                     Height = dailyImageData.Height,
                     Width = dailyImageData.Width,
-                    Pixels = dailyImageData.Pixels,                    
+                    Pixels = dailyImageData.Pixels,
                 },
+                ReferenceImage = new ImageData() { },
             };
         }
     }

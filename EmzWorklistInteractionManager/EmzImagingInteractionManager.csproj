@@ -49,7 +49,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="IImagingInteractionManager.cs" />
     <Compile Include="MsqMappingHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ImagingInteractionManagerService.cs" />
@@ -93,6 +92,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj">
+      <Project>{2a651adf-c51a-484f-ad14-daa20cc19bbf}</Project>
+      <Name>EmzImagingInteractionManager.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
