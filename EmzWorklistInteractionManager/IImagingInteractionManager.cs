@@ -8,22 +8,28 @@ using System.Threading.Tasks;
 
 namespace EmzWorklistInteractionManager
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IImagingInteractionManager
     {
         [OperationContract]
-        Task<List<WorklistItem>> GetWorklistForStaff(Guid staffId);
+        Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId);
 
         [OperationContract]
-        Task<ImageInfo> GetImageInfo(Guid imageId);
+        Task<ImageInfo> GetImageInfoAsync(Guid imageId);
 
         [OperationContract]
-        Task<ImageData> GetImageDataForReview(Guid imageId);
+        Task<ImageData> GetImageDataForReviewAsync(Guid imageId);
     }
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "EmzWorklistInteractionManager.ContractType".
+    public interface IImagingInteractionManagerProxy : IImagingInteractionManager
+    {
+        List<WorklistItem> GetWorklistForStaff(Guid staffId);
+
+        ImageInfo GetImageInfo(Guid imageId);
+
+        ImageData GetImageDataForReview(Guid imageId);
+    }
+
     [DataContract]
     public class WorklistItem
     {

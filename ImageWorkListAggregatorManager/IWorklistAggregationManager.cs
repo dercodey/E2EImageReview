@@ -12,7 +12,12 @@ namespace ImageWorkListAggregatorManager
     public interface IWorklistAggregationManager
     {
         [OperationContract]
-        Task<List<WorklistItem>> GetWorklistForStaff(Guid staffId);
+        Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId);
+    }
+
+    public interface IWorklistAggregationManagerWithSync : IWorklistAggregationManager
+    {
+        List<WorklistItem> GetWorklistForStaff(Guid staffId);
     }
 
     [DataContract]

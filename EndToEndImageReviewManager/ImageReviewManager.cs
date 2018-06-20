@@ -8,7 +8,7 @@ namespace EndToEndImageReviewManager
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class ImageReviewManager : IImageReviewManager
     {
-        public async Task<ImageInfo> GetImageInfo(Guid imageId)
+        public async Task<ImageInfo> GetImageInfoAsync(Guid imageId)
         {
             var client = new ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(imageId);
@@ -21,7 +21,7 @@ namespace EndToEndImageReviewManager
             };
         }
 
-        public async Task<ImageReviewResponse> ReviewImage(ImageReviewRequest request)
+        public async Task<ImageReviewResponse> ReviewImageAsync(ImageReviewRequest request)
         {
             var client = new ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(request.ImageId);

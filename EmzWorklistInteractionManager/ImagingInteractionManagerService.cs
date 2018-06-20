@@ -10,7 +10,7 @@ namespace EmzWorklistInteractionManager
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class ImagingInteractionManagerService : IImagingInteractionManager
     {
-        public async Task<List<WorklistItem>> GetWorklistForStaff(Guid staffId)
+        public async Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId)
         {
             var msqStaffId = MsqMappingHelper.MapIdToMsq(EntityType.Staff, staffId);
 
@@ -32,7 +32,7 @@ namespace EmzWorklistInteractionManager
             return worklist.ToList();
         }
 
-        public async Task<ImageInfo> GetImageInfo(Guid imageId)
+        public async Task<ImageInfo> GetImageInfoAsync(Guid imageId)
         {
             var msqImgId = MsqMappingHelper.MapIdToMsq(EntityType.Image, imageId);
 
@@ -49,7 +49,7 @@ namespace EmzWorklistInteractionManager
             };
         }
 
-        public async Task<ImageData> GetImageDataForReview(Guid imageId)
+        public async Task<ImageData> GetImageDataForReviewAsync(Guid imageId)
         {
             var msqImgId = MsqMappingHelper.MapIdToMsq(EntityType.Image, imageId);
 

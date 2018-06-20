@@ -13,10 +13,10 @@ namespace EndToEndImageReviewManager
     public interface IImageReviewManager
     {
         [OperationContract]
-        Task<ImageInfo> GetImageInfo(Guid imageId);
+        Task<ImageInfo> GetImageInfoAsync(Guid imageId);
 
         [OperationContract]
-        Task<ImageReviewResponse> ReviewImage(ImageReviewRequest request);
+        Task<ImageReviewResponse> ReviewImageAsync(ImageReviewRequest request);
     }
 
     [DataContract]
