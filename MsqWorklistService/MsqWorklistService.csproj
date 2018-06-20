@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMsqImagingService.cs" />
+    <Compile Include="MsqImageData.cs" />
+    <Compile Include="MsqImageInfo.cs" />
     <Compile Include="MsqImageRepository.cs" />
+    <Compile Include="MsqWorklistItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MsqImagingService.cs" />
   </ItemGroup>
