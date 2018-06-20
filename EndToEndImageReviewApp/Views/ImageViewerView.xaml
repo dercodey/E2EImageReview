@@ -8,7 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Border BorderBrush="DarkKhaki" BorderThickness="10">
-        <TextBlock Text="{Binding ImageInfoText}">
-        </TextBlock>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="{Binding ImageInfoText}" />
+            <TextBlock Text="{Binding ImagePixelText}" />
+        </StackPanel>
     </Border>
 </UserControl>

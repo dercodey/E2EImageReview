@@ -59,7 +59,15 @@ namespace EndToEndImageReviewApp.ViewModels
         }
         string _imageInfoText;
 
-        public string ImagePixelText { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string ImagePixelText
+        {
+            get => _imagePixelText;
+            set => SetProperty(ref _imagePixelText, value);
+        }
+        string _imagePixelText;
 
         /// <summary>
         /// the load image command can be bound to a button (but needs parameters)
@@ -72,6 +80,7 @@ namespace EndToEndImageReviewApp.ViewModels
         /// <param name="args"></param>
         void LoadImage(LoadImageCommandArgs args)
         {
+            // TODO: move this to model
             var client = new ImageReviewManagerClient();
             client
                 .GetImageInfoAsync(args.ImageId)
@@ -92,7 +101,19 @@ namespace EndToEndImageReviewApp.ViewModels
                 })
                 .ContinueWith(task =>
                 {
-                    ImagePixelText = task.Result.DailyImage.Pixels.ToString();
+                    var daily = task.Result.DailyImage;
+                    StringBuilder sb = new StringBuilder();
+
+                    for (int y = 0; y < daily.Height; y++)
+                    {
+                        for (int x = 0; x < daily.Width; x++)
+                        {
+                            sb.AppendFormat($"{daily.Pixels[y * daily.Width + x]}|");
+                        }
+                        sb.AppendLine();
+                    }
+                    ImagePixelText = sb.ToString();
+
                 }, _uiScheduler);
         }
     }
