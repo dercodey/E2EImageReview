@@ -8,9 +8,9 @@ using System.Windows.Data;
 
 using Prism.Events;
 using Prism.Mvvm;
+using Prism.Commands;
 
 using EndToEndImageReviewApp.Events;
-using Prism.Commands;
 
 namespace EndToEndImageReviewApp.ViewModels
 {

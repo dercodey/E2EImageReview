@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
+using ImagingTypes;
+
 using EmzImagingInteractionManager.Contracts;
 using EmzImagingInteractionManager.MsqWorklistService;
 

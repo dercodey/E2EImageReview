@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using System.Text;
 
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 
+using ImageReviewManager.Contracts;
+
 using EndToEndImageReviewApp.Events;
-using System.Text;
-using EndToEndImageReviewApp.ImageReviewManagerService;
+
 
 namespace EndToEndImageReviewApp.ViewModels
 {

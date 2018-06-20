@@ -43,9 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IImageReviewManager.cs" />
-    <Compile Include="ImageData.cs" />
-    <Compile Include="ImageInfo.cs" />
+    <Compile Include="ImageReviewManagerClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImagingTypes\ImagingTypes.csproj">
+      <Project>{9ed31117-57d0-4202-93e8-e4501a84c3de}</Project>
+      <Name>ImagingTypes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

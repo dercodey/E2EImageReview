@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}</ProjectGuid>
+    <ProjectGuid>{9ED31117-57D0-4202-93E8-E4501A84C3DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EmzImagingInteractionManager.Contracts</RootNamespace>
-    <AssemblyName>EmzImagingInteractionManager.Contracts</AssemblyName>
+    <RootNamespace>ImagingTypes</RootNamespace>
+    <AssemblyName>ImagingTypes</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -33,7 +33,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,15 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IImagingInteractionManager.cs" />
-    <Compile Include="ImagingInteractionManagerClient.cs" />
+    <Compile Include="ImageData.cs" />
+    <Compile Include="ImageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ImagingTypes\ImagingTypes.csproj">
-      <Project>{9ed31117-57d0-4202-93e8-e4501a84c3de}</Project>
-      <Name>ImagingTypes</Name>
-    </ProjectReference>
+    <Compile Include="WorklistItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

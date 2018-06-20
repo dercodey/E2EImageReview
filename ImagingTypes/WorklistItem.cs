@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ImageReviewManager.Contracts
+namespace ImagingTypes
 {
     [DataContract]
-    public class ImageInfo
+    public class WorklistItem
     {
         [DataMember]
         public Guid PatientId { get; set; }
@@ -18,4 +18,5 @@ namespace ImageReviewManager.Contracts
         [DataMember]
         public DateTime AcquisitionDateTime { get; set; }
     }
+
 }

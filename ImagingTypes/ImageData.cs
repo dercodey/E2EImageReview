@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace ImageReviewManager.Contracts
+namespace ImagingTypes
 {
     [DataContract]
     public class ImageData

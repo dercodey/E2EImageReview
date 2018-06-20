@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using EmzImagingInteractionManager.Contracts;
+using ImagingTypes;
+using ImageReviewManager.Contracts;
 
 namespace ImageReviewManager
 {
@@ -9,7 +10,7 @@ namespace ImageReviewManager
     {
         public async Task<ImageInfo> GetImageInfoAsync(Guid imageId)
         {
-            var client = new ImagingInteractionManagerClient();
+            var client = new EmzImagingInteractionManager.Contracts.ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(imageId);
             return new ImageInfo()
             {
@@ -22,10 +23,10 @@ namespace ImageReviewManager
 
         public async Task<ImageReviewResponse> ReviewImageAsync(ImageReviewRequest request)
         {
-            var client = new ImagingInteractionManagerClient();
+            var client = new EmzImagingInteractionManager.Contracts.ImagingInteractionManagerClient();
             var imageInfo = await client.GetImageInfoAsync(request.ImageId);
-            EmzImagingInteractionManager.Contracts.ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
-            EmzImagingInteractionManager.Contracts.ImageData referenceImageData = null;
+            ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
+            ImageData referenceImageData = null;
 
 
             return new ImageReviewResponse()
