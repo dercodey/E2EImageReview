@@ -82,11 +82,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Connected Services\WorklistAggregatorManagerService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Events\StaffLoggedInEvent.cs" />
     <Compile Include="ImageViewerModule.cs" />
     <Compile Include="Models\WorklistItem.cs" />
@@ -148,18 +143,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\WorklistAggregatorManagerService\ImagingTypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WorklistAggregatorManagerService\service.wsdl" />
-    <None Include="Connected Services\WorklistAggregatorManagerService\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WorklistAggregatorManagerService\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ImagingTypes.WorklistItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,29 +156,21 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\WorklistAggregatorManagerService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WorklistAggregatorManagerService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WorklistAggregatorManagerService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\WorklistAggregatorManagerService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj">
       <Project>{170f4763-eba7-40db-b265-02f4b02db8ee}</Project>
       <Name>ImageReviewManager.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj">
+      <Project>{ef7c973d-62fa-4140-b357-46b840308df9}</Project>
+      <Name>ImageWorklistAggregatorManager.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\ImagingTypes\ImagingTypes.csproj">
       <Project>{9ed31117-57d0-4202-93e8-e4501a84c3de}</Project>
       <Name>ImagingTypes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

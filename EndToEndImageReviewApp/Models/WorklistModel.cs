@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using ImageWorkListAggregatorManager.Contracts;
+
 namespace EndToEndImageReviewApp
 {
     public class WorklistModel
     {
         public async Task<List<WorklistItem>> PopulateWorklistForStaff(Guid staffId)
         {
-            var client = new WorklistAggregatorManagerService.WorklistAggregationManagerClient();
+            var client = new WorklistAggregationManagerClient();
             var listResult = await client.GetWorklistForStaffAsync(staffId);
             client.Close();
 

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using ImagingTypes;
+using ImageWorkListAggregatorManager.Contracts;
 using EmzImagingInteractionManager.Contracts;
 
 namespace ImageWorkListAggregatorManager
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class WorklistAggregationManagerService : IWorklistAggregationManager
     {
         public async Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId)
@@ -17,18 +17,11 @@ namespace ImageWorkListAggregatorManager
             var resultList = await client.GetWorklistForStaffAsync(staffId);
             client.Close();
 
-            var worklist =
-                resultList.Select(item =>
-                new WorklistItem()
-                {
-                    PatientId = item.PatientId,
-                    PatientName = item.PatientName,
-                    ImageId = item.ImageId,
-                    AcquisitionDateTime = item.AcquisitionDateTime
-                });
+            // get the list of items from data access
+            List<WorklistItem> dataAccessList = new List<WorklistItem>();
 
-            // convert staff Id to 
-            return worklist.ToList();
+            // combine the legacy list with list acquired from data store
+            return resultList.Concat(dataAccessList).ToList();
         }
     }
 }

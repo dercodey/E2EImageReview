@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using ImagingTypes;
 
-namespace ImageWorkListAggregatorManager
+namespace ImageWorkListAggregatorManager.Contracts
 {
     [ServiceContract]
     public interface IWorklistAggregationManager
