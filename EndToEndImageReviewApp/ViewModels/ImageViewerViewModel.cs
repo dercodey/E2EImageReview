@@ -7,10 +7,9 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 
-using ImageReviewManager.Contracts;
+using ImagingTypes;
 
 using EndToEndImageReviewApp.Events;
-
 
 namespace EndToEndImageReviewApp.ViewModels
 {
@@ -21,6 +20,7 @@ namespace EndToEndImageReviewApp.ViewModels
     {
         IEventAggregator _eventAggregator;
         TaskScheduler _uiScheduler;
+        ImageViewerModel _model = new ImageViewerModel();
 
         /// <summary>
         /// construct the viewer view model, creating commands and subscribing to events
@@ -31,7 +31,7 @@ namespace EndToEndImageReviewApp.ViewModels
             _eventAggregator = eventAggregator;
 
             // delegate to perform a load image
-            LoadImageCommand = 
+            LoadImageCommand =
                 new DelegateCommand<LoadImageCommandArgs>(LoadImage);
 
             // subscribe to the item selected event, to perform a load image
@@ -80,40 +80,16 @@ namespace EndToEndImageReviewApp.ViewModels
         /// <param name="args"></param>
         void LoadImage(LoadImageCommandArgs args)
         {
-            // TODO: move this to model
-            var client = new ImageReviewManagerClient();
-            client
-                .GetImageInfoAsync(args.ImageId)
+            _model.GetImageInfoAsync(args.ImageId, args.AcquisitionDateTime)
                 .ContinueWith(task =>
                 {
-                    StringBuilder sb = new StringBuilder();
-                    sb.AppendLine("Image loaded:");
-                    sb.AppendLine($"ImageId = {args.ImageId}");
-                    sb.AppendLine($"When = {args.AcquisitionDateTime}");
-                    sb.AppendLine($"Patient Name = {task.Result.PatientName}");
-                    ImageInfoText = sb.ToString();
+                    ImageInfoText = task.Result;
                 }, _uiScheduler);
 
-            client
-                .ReviewImageAsync(new ImageReviewRequest()
-                {
-                    ImageId = args.ImageId
-                })
+            _model.ReviewImageAsync(args.ImageId)
                 .ContinueWith(task =>
                 {
-                    var daily = task.Result.DailyImage;
-                    StringBuilder sb = new StringBuilder();
-
-                    for (int y = 0; y < daily.Height; y++)
-                    {
-                        for (int x = 0; x < daily.Width; x++)
-                        {
-                            sb.AppendFormat($"{daily.Pixels[y * daily.Width + x]}|");
-                        }
-                        sb.AppendLine();
-                    }
-                    ImagePixelText = sb.ToString();
-
+                    ImagePixelText = task.Result.GetPixelString();
                 }, _uiScheduler);
         }
     }

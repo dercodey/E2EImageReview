@@ -84,6 +84,7 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Events\StaffLoggedInEvent.cs" />
     <Compile Include="ImageViewerModule.cs" />
+    <Compile Include="Models\ImageViewerModel.cs" />
     <Compile Include="Models\WorklistItem.cs" />
     <Compile Include="Models\WorklistModel.cs" />
     <Compile Include="ViewModels\ImageViewerViewModel.cs" />

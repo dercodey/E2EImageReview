@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagingTypes", "ImagingType
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorklistAggregatorManager.Contracts", "ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj", "{EF7C973D-62FA-4140-B357-46B840308DF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyManager", "ProxyManager\ProxyManager.csproj", "{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +86,10 @@ Global
 		{EF7C973D-62FA-4140-B357-46B840308DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF7C973D-62FA-4140-B357-46B840308DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF7C973D-62FA-4140-B357-46B840308DF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{170F4763-EBA7-40DB-B265-02F4B02DB8EE} = {D1F2C1FF-F038-4654-BEC5-F9DC38E0E6BE}
 		{9ED31117-57D0-4202-93E8-E4501A84C3DE} = {F5A560F2-75BC-46C8-A854-3E23DB470B2C}
 		{EF7C973D-62FA-4140-B357-46B840308DF9} = {D1F2C1FF-F038-4654-BEC5-F9DC38E0E6BE}
+		{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1} = {F5A560F2-75BC-46C8-A854-3E23DB470B2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA29C12F-BF7F-4E61-8A5A-59CE0A047E7A}
