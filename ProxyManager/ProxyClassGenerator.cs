@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.ServiceModel;
-
+using System.Threading.Tasks;
+using ImagingTypes;
 using Microsoft.CodeAnalysis;
+
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
 
@@ -50,7 +53,7 @@ namespace ProxyManager
         /// <summary>
         /// designates the default namespace for all proxies
         /// </summary>
-        private static string ProxyNamespace => 
+        private static string ProxyNamespace =>
             "GeneratedProxyClasses";
 
         /// <summary>
@@ -68,8 +71,8 @@ namespace ProxyManager
         /// <returns></returns>
         internal static Type CreateProxyTypeFor<TInterface>()
         {
-            var syntaxTree = CreateSyntaxTreeForProxyClass<TInterface>();
             var references = GetMetadataReferences<TInterface>();
+            var syntaxTree = CreateSyntaxTreeForProxyClass<TInterface>();
             Assembly assembly = CompileAssemblyForSyntaxTree(syntaxTree, references);
 
             Type proxyType = assembly.GetType($"{ProxyNamespace}.{GetProxyName<TInterface>()}");
@@ -89,15 +92,15 @@ namespace ProxyManager
             Func<MethodInfo, string> funcChannelInvoke =
                 mi => $"return Channel.{mi.Name}({string.Join(",", mi.GetParameters().Select(pi => pi.Name))})";
 
-            var methodStatements = 
+            var methodStatements =
                 interfaceType
                     .GetMethods()
-                    .Select(mi => 
-                        MethodDefinition.FromMethodInfo(mi, 
+                    .Select(mi =>
+                        MethodDefinition.FromMethodInfo(mi,
                             new string[] { funcChannelInvoke(mi) }));
 
-            return 
-                MethodDefinition.CreateSyntaxTreeForClass(ProxyNamespace, 
+            return
+                MethodDefinition.CreateSyntaxTreeForClass(ProxyNamespace,
                     GetProxyName<TInterface>(),
                     new string[] { $"System.ServiceModel.ClientBase<{interfaceType.FullName}>", interfaceType.FullName },
                     methodStatements.ToArray());
@@ -108,14 +111,20 @@ namespace ProxyManager
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
-        private static MetadataReference[] GetMetadataReferences<TInterface>() =>
-            new MetadataReference[]
+        private static MetadataReference[] GetMetadataReferences<TInterface>()
+        {
+            return new MetadataReference[]
             {
                 MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
                 MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
                 MetadataReference.CreateFromFile(typeof(ChannelFactory).Assembly.Location),
+                // MetadataReference.CreateFromFile(typeof(Task).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(DataContractAttribute).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(ImageInfo).Assembly.Location),
                 MetadataReference.CreateFromFile(typeof(TInterface).Assembly.Location),
             };
+        }
+            
 
         /// <summary>
         /// 
