@@ -2,6 +2,7 @@
 {
     /// <summary>
     /// ProxyManager maintains proxies (that can be reused?)
+    /// TODO: add Roslyn compiler interface
     /// </summary>
     public class ProxyManager
     {
