@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
+using System.ServiceModel;
+
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Emit;
 
 namespace ProxyManager
 {
-    internal static class ProxyClassGenerator
+    public static class ProxyClassGenerator
     {
         // list of generated assemblies
         static List<Assembly> _generatedAssemblies = new List<Assembly>();
@@ -23,14 +24,10 @@ namespace ProxyManager
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
-        internal static TInterface CreateProxy<TInterface>()
+        public static TInterface CreateProxy<TInterface>()
         {
             Type proxyType = GetProxyTypeFor<TInterface>();
             object proxy = Activator.CreateInstance(proxyType);
-
-            proxyType.InvokeMember("Write", BindingFlags.Default | BindingFlags.InvokeMethod,
-                null, proxy, new object[] { "Hello World" });
-
             return (TInterface)proxy;
         }
 
@@ -102,7 +99,7 @@ namespace ProxyManager
             return 
                 MethodDefinition.CreateSyntaxTreeForClass(ProxyNamespace, 
                     GetProxyName<TInterface>(),
-                    new string[] { $"ClientBase<{interfaceType.Name}>", interfaceType.Name },
+                    new string[] { $"System.ServiceModel.ClientBase<{interfaceType.FullName}>", interfaceType.FullName },
                     methodStatements.ToArray());
         }
 
@@ -111,11 +108,12 @@ namespace ProxyManager
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
-            private static MetadataReference[] GetMetadataReferences<TInterface>() =>
+        private static MetadataReference[] GetMetadataReferences<TInterface>() =>
             new MetadataReference[]
             {
                 MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
                 MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
+                MetadataReference.CreateFromFile(typeof(ChannelFactory).Assembly.Location),
                 MetadataReference.CreateFromFile(typeof(TInterface).Assembly.Location),
             };
 
@@ -125,7 +123,7 @@ namespace ProxyManager
         /// <param name="syntaxTree"></param>
         /// <param name="references"></param>
         /// <returns></returns>
-        private static Assembly CompileAssemblyForSyntaxTree(SyntaxTree syntaxTree, MetadataReference[] references)
+        public static Assembly CompileAssemblyForSyntaxTree(SyntaxTree syntaxTree, MetadataReference[] references)
         {
             string assemblyName = Path.GetRandomFileName();
             CSharpCompilation compilation = CSharpCompilation.Create(

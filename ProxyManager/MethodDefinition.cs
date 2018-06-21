@@ -33,8 +33,8 @@ namespace ProxyManager
         /// <returns></returns>
         public static MethodDefinition FromMethodInfo(MethodInfo mi, string[] blocks)
         {
-            var parameterDeclaration = mi.GetParameters().Select(pi => $"{pi.ParameterType} {pi.Name}");
-            return new MethodDefinition(mi.ReturnType.Name, mi.Name, parameterDeclaration.ToArray(), blocks);
+            var parameterDeclaration = mi.GetParameters().Select(pi => $"{pi.ParameterType.FullName} {pi.Name}");
+            return new MethodDefinition(mi.ReturnType.FullName, mi.Name, parameterDeclaration.ToArray(), blocks);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace ProxyManager
         {
             var classScope = "public";
             var mdString = string.Join("\n", methodDefinitions.Select(md => md.ToString()));
-            var classDefinition = $"{classScope} class {className} : {string.Join(", ", baseNames)} {{ {mdString} }}";
+            var classDefinition = $"{classScope} class {className} : {(baseNames != null ? string.Join(", ", baseNames) : "object")} {{ {mdString} }}";
             var sourceText =  $"namespace {classNamespace} {{ {classDefinition}  }}";
 
             SyntaxTree syntaxTree = CSharpSyntaxTree.ParseText(sourceText);
@@ -89,8 +89,8 @@ namespace ProxyManager
         /// <returns></returns>
         public override string ToString() =>
             $"{MethodScope} {ReturnType} {MethodName} " +
-            $"({string.Join(",", Arguments)})" +
-            $" {{ {string.Join(";\n", Blocks)} }}";
+            $"({(Arguments != null ? string.Join(",", Arguments) : string.Empty)})" +
+            $" {{ {string.Join("\n", Blocks.Select(block => $"{block};"))} }}";
     }
 
 }
