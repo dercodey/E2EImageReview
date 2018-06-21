@@ -66,6 +66,10 @@
       <Project>{9ed31117-57d0-4202-93e8-e4501a84c3de}</Project>
       <Name>ImagingTypes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProxyManager\ProxyManager.csproj">
+      <Project>{701bd2f3-3de6-42ae-bbe9-5bc5140cabb1}</Project>
+      <Name>ProxyManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
