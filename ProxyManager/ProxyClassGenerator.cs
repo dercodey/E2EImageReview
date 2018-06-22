@@ -27,18 +27,6 @@ namespace ProxyManager
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
-        public static TInterface CreateProxy<TInterface>()
-        {
-            Type proxyType = GetProxyTypeFor<TInterface>();
-            object proxy = Activator.CreateInstance(proxyType);
-            return (TInterface)proxy;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="TInterface"></typeparam>
-        /// <returns></returns>
         internal static Type GetProxyTypeFor<TInterface>()
         {
             Type proxyType = null;
@@ -99,11 +87,12 @@ namespace ProxyManager
                         MethodDefinition.FromMethodInfo(mi,
                             new string[] { funcChannelInvoke(mi) }));
 
-            return
-                MethodDefinition.CreateSyntaxTreeForClass(ProxyNamespace,
+            var classDefinition = new ClassDefinition(ProxyNamespace,
                     GetProxyName<TInterface>(),
                     new string[] { $"System.ServiceModel.ClientBase<{interfaceType.FullName}>", interfaceType.FullName },
                     methodStatements.ToArray());
+
+            return classDefinition.CreateSyntaxTree();
         }
 
         /// <summary>

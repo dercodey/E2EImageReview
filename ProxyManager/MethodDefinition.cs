@@ -14,7 +14,7 @@ namespace ProxyManager
     public class MethodDefinition
     {
         /// <summary>
-        /// 
+        /// construct a new method definition
         /// </summary>
         /// <param name="returnType"></param>
         /// <param name="methodName"></param>
@@ -29,40 +29,21 @@ namespace ProxyManager
         }
 
         /// <summary>
-        /// 
+        /// construct method definition from a reflection MethodInfo object
         /// </summary>
         /// <param name="mi"></param>
         /// <param name="blocks"></param>
         /// <returns></returns>
         public static MethodDefinition FromMethodInfo(MethodInfo mi, string[] statements)
         {
+            // for the method parameter declarations
             var parameterDeclaration = 
                 from pi in mi.GetParameters()
                 select $"{ToGenericTypeString(pi.ParameterType)} {pi.Name}";
 
+            // return the new method definition
             return new MethodDefinition(ToGenericTypeString(mi.ReturnType), mi.Name, 
                 parameterDeclaration.ToArray(), statements);
-        }
-
-        /// <summary>
-        /// helper to generate the source file for an entire class
-        /// based on a collectin of method definitions
-        /// </summary>
-        /// <param name="classNamespace"></param>
-        /// <param name="className"></param>
-        /// <param name="methodDefinitions"></param>
-        /// <returns></returns>
-        public static SyntaxTree CreateSyntaxTreeForClass(string classNamespace,
-            string className, string[] baseNames,
-            MethodDefinition[] methodDefinitions)
-        {
-            var classScope = "public";
-            var classDefinition = $"{classScope} class {className} " +
-                $"{(baseNames != null ? ":" : string.Empty)} {Join(", ", baseNames)} " +
-                $"{{ {Join("\n", from md in methodDefinitions select md.ToString())} }}";
-            var sourceText = $"namespace {classNamespace} {{ {classDefinition}  }}";
-
-            return CSharpSyntaxTree.ParseText(sourceText);
         }
 
         /// <summary>
@@ -71,27 +52,27 @@ namespace ProxyManager
         public string MethodScope => "public";
 
         /// <summary>
-        /// 
+        /// the method name
         /// </summary>
         public string MethodName { get; set; }
 
         /// <summary>
-        /// 
+        /// the arguments of the method, in "[type] [name]" format
         /// </summary>
         public string[] Arguments { get; set; }
 
         /// <summary>
-        /// 
+        /// the return type of the method
         /// </summary>
         public string ReturnType { get; set; }
 
         /// <summary>
-        /// 
+        /// the sequence of statements forming the body of the method
         /// </summary>
         public string[] Statements { get; set; }
 
         /// <summary>
-        /// 
+        /// converts the method definition to a compilable string
         /// </summary>
         /// <returns></returns>
         public override string ToString() =>
@@ -99,7 +80,7 @@ namespace ProxyManager
             $" {{ {Join("\n", from statement in Statements select $"{statement};")} }}";
 
         /// <summary>
-        /// 
+        /// helper to create a generic type string Generic<SubType> suitable for compilation
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>

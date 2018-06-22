@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 
 using ImagingTypes;
-using ProxyManager;
 
 using ImageWorkListAggregatorManager.Contracts;
 using EmzImagingInteractionManager.Contracts;
@@ -19,13 +18,13 @@ namespace ImageWorkListAggregatorManager
         public async Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId)
         {
 #if USE_PROXY_GENERATOR
-            var proxy = ProxyClassGenerator.CreateProxy<IImagingInteractionManager>();
+            var proxy = ProxyManager.ProxyManager.Instance.CreateProxy<IImagingInteractionManager>();
 #else
             var proxy = new ImagingInteractionManagerClient();
 #endif
             var resultList = await proxy.GetWorklistForStaffAsync(staffId);
 #if USE_PROXY_GENERATOR
-            ((ClientBase<IImagingInteractionManager>)proxy).Close();
+            ProxyManager.ProxyManager.Instance.CloseProxy(proxy);
 #else
             proxy.Close();
 #endif

@@ -25,8 +25,7 @@ namespace ProxyManager.Tests
             var className = "WriterClass";
             var methodName = "Write";
 
-            var syntaxTree =
-                MethodDefinition.CreateSyntaxTreeForClass(testNamespace, className, null, 
+            var classDefinition = new ClassDefinition(testNamespace, className, null, 
                     new MethodDefinition[] 
                     {
                         new MethodDefinition("void", methodName, null, 
@@ -36,6 +35,7 @@ namespace ProxyManager.Tests
                             })
                     });
 
+            var syntaxTree = classDefinition.CreateSyntaxTree();
             var metadataReferences =
                 new MetadataReference[]
                 {
@@ -54,26 +54,36 @@ namespace ProxyManager.Tests
         public void CreateProxyForContractTest()
         {
             // create the proxy
-            var proxy = ProxyClassGenerator.CreateProxy<IServiceTest>();
+            var proxy = ProxyManager.Instance.CreateProxy<IServiceTest>();
 
             // get the contract type
             var cb = (ClientBase<IServiceTest>)proxy;
             var contractName = cb.Endpoint.Contract.ContractType.FullName;
 
             // check that proxy type is correct
-            Assert.IsTrue(cb.Endpoint.Contract.ContractType.IsAssignableFrom(typeof(IServiceTest))); 
-                // contractName.CompareTo(typeof(IServiceTest).FullName) == 0);
+            Assert.IsTrue(cb.Endpoint.Contract.ContractType.IsAssignableFrom(typeof(IServiceTest)));
+            // contractName.CompareTo(typeof(IServiceTest).FullName) == 0);
+
+            ProxyManager.Instance.CloseProxy(proxy);
         }
 
         [TestMethod()]
         [ExpectedException(typeof(EndpointNotFoundException))]
         public void CallProxyWithNoEndpoint()
         {
-            // create the proxy
-            var proxy = ProxyClassGenerator.CreateProxy<IServiceTest>();
+            IServiceTest proxy = null;
+            try
+            { 
+                // create the proxy
+                proxy = ProxyManager.Instance.CreateProxy<IServiceTest>();
 
-            // try invoking--should fail as no service instance is running
-            var result = proxy.AddOne(2);
+                // try invoking--should fail as no service instance is running
+                var result = proxy.AddOne(2);
+            }
+            finally
+            {
+                ProxyManager.Instance.CloseProxy(proxy);
+            }
         }
     }
 }
