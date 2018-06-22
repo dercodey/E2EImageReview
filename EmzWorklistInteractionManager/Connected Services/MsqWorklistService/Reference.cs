@@ -32,6 +32,9 @@ namespace EmzImagingInteractionManager.MsqWorklistService {
         private int MsqPatId1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientMedRcField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PatientNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -84,6 +87,19 @@ namespace EmzImagingInteractionManager.MsqWorklistService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientMedRc {
+            get {
+                return this.PatientMedRcField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientMedRcField, value) != true)) {
+                    this.PatientMedRcField = value;
+                    this.RaisePropertyChanged("PatientMedRc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PatientName {
             get {
                 return this.PatientNameField;
@@ -129,6 +145,9 @@ namespace EmzImagingInteractionManager.MsqWorklistService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> MsqRegistrationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PatientMedRcField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PatientNameField;
@@ -204,6 +223,19 @@ namespace EmzImagingInteractionManager.MsqWorklistService {
                 if ((this.MsqRegistrationIdField.Equals(value) != true)) {
                     this.MsqRegistrationIdField = value;
                     this.RaisePropertyChanged("MsqRegistrationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PatientMedRc {
+            get {
+                return this.PatientMedRcField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientMedRcField, value) != true)) {
+                    this.PatientMedRcField = value;
+                    this.RaisePropertyChanged("PatientMedRc");
                 }
             }
         }

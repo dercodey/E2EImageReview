@@ -13,6 +13,9 @@ namespace ImagingTypes
         public string PatientName { get; set; }
 
         [DataMember]
+        public string PatientMedRc { get; set; }
+
+        [DataMember]
         public Guid ImageId { get; set; }
 
         [DataMember]

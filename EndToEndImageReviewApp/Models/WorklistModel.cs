@@ -20,6 +20,7 @@ namespace EndToEndImageReviewApp
                     {
                         PatientId = item.PatientId,
                         PatientName = item.PatientName,
+                        MedRc = item.PatientMedRc,
                         ImageId = item.ImageId,
                         AcquisitionDateTime = item.AcquisitionDateTime
                     }).ToList();

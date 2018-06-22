@@ -16,21 +16,29 @@ namespace EmzImagingInteractionManager
     {
         internal static Guid MapIdFromMsq(EntityType forEntityType, int msqEntityId)
         {
-            var dict = _mappings[forEntityType];
-            if (!dict.ContainsKey(msqEntityId))
-                dict.Add(msqEntityId, Guid.NewGuid());
-            return dict[msqEntityId];
+            lock (_lock)
+            {
+                var dict = _mappings[forEntityType];
+                if (!dict.ContainsKey(msqEntityId))
+                    dict.Add(msqEntityId, Guid.NewGuid());
+                return dict[msqEntityId];
+            }
         }
 
         internal static int MapIdToMsq(EntityType forEntityType, Guid entityId)
         {
-            var dict = _mappings[forEntityType];
-            var key = 
-                from entry in dict
-                where entry.Value.CompareTo(entityId) == 0
-                select entry.Key;
-            return key.FirstOrDefault();
+            lock (_lock)
+            {
+                var dict = _mappings[forEntityType];
+                var key =
+                    from entry in dict
+                    where entry.Value.CompareTo(entityId) == 0
+                    select entry.Key;
+                return key.FirstOrDefault();
+            }
         }
+
+        static object _lock = new object();
 
         static Dictionary<EntityType, Dictionary<int, Guid>> _mappings =
             new Dictionary<EntityType, Dictionary<int, Guid>>()

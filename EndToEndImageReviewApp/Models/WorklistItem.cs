@@ -13,6 +13,8 @@ namespace EndToEndImageReviewApp
 
         public string PatientName { get; set; }
 
+        public string MedRc { get; set; }
+
         public Guid ImageId { get; set; }
 
         public DateTime AcquisitionDateTime { get; set; }

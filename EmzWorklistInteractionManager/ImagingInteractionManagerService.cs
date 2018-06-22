@@ -26,6 +26,7 @@ namespace EmzImagingInteractionManager
                 {
                     PatientId = MsqMappingHelper.MapIdFromMsq(EntityType.Patient, item.MsqPatId1),
                     PatientName = item.PatientName,
+                    PatientMedRc = item.PatientMedRc,
                     ImageId = MsqMappingHelper.MapIdFromMsq(EntityType.Image, item.MsqImgId),
                     AcquisitionDateTime = item.AcquisitionDateTime
                 });
@@ -46,6 +47,7 @@ namespace EmzImagingInteractionManager
             {
                 ImageId = MsqMappingHelper.MapIdFromMsq(EntityType.Image, msqImageInfo.MsqImgId),
                 PatientId = MsqMappingHelper.MapIdFromMsq(EntityType.Patient, msqImageInfo.MsqImgId),
+                PatientMedRc = msqImageInfo.PatientMedRc,
                 PatientName = msqImageInfo.PatientName,
                 AcquisitionDateTime = msqImageInfo.AcquisitionDateTime,
             };

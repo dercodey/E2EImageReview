@@ -14,6 +14,7 @@ namespace MsqWorklistService
                 {
                     MsqPatId1 = imageRepositoryData.PatientId,
                     MsqImgId = imageRepositoryData.ImageId,
+                    PatientMedRc = GetPatientMedRc(imageRepositoryData.PatientId),
                     PatientName = GetPatientName(imageRepositoryData.PatientId),
                     AcquisitionDateTime = imageRepositoryData.AcquisitionDateTime
                 };
@@ -32,6 +33,7 @@ namespace MsqWorklistService
             {
                 MsqImgId = imageRepositoryData.ImageId,
                 MsqPatId1 = imageRepositoryData.PatientId,
+                PatientMedRc = GetPatientMedRc(imageRepositoryData.PatientId),
                 PatientName = GetPatientName(imageRepositoryData.PatientId),
                 AcquisitionDateTime = imageRepositoryData.AcquisitionDateTime,
                 MsqReferenceImgId = imageRepositoryData.ReferenceImageId,
@@ -44,6 +46,13 @@ namespace MsqWorklistService
             return MsqImageRepository
                     .GetAllPatientData()
                     .FirstOrDefault(patient => patient.PatientId == msqPatId).PatientName;
+        }
+
+        private static string GetPatientMedRc(int msqPatId)
+        {
+            return MsqImageRepository
+                    .GetAllPatientData()
+                    .FirstOrDefault(patient => patient.PatientId == msqPatId).MedRc;
         }
 
         public MsqImageData LoadImageData(int imgId)

@@ -19,6 +19,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10,0,10,0" Text="{Binding MedRc}"></TextBlock>
                         <TextBlock Margin="10,0,10,0" Text="{Binding PatientName}"></TextBlock>
                         <TextBlock Margin="10,0,10,0">Image:</TextBlock>
                         <TextBlock Margin="10,0,10,0" Text="{Binding AcquisitionDateTime}"></TextBlock>
