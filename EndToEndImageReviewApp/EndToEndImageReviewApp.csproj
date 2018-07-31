@@ -169,6 +169,10 @@
       <Project>{9ed31117-57d0-4202-93e8-e4501a84c3de}</Project>
       <Name>ImagingTypes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ProxyManager\ProxyManager.csproj">
+      <Project>{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}</Project>
+      <Name>ProxyManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />

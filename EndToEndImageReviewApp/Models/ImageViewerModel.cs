@@ -11,9 +11,9 @@ namespace EndToEndImageReviewApp
     {
         public async Task<string> GetImageInfoAsync(Guid imageId, DateTime acquisitionDateTime)
         {
-            var client = new ImageReviewManagerClient();
+            var client = ProxyManager.ProxyManager.Instance.CreateProxy<IImageReviewManager>();
             var imageInfo = await client.GetImageInfoAsync(imageId);
-            client.Close();
+            ProxyManager.ProxyManager.Instance.CloseProxy(client);
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Image loaded:");
@@ -25,9 +25,9 @@ namespace EndToEndImageReviewApp
 
         public async Task<ImageData> ReviewImageAsync(Guid imageId)
         {
-            var client = new ImageReviewManagerClient();
+            var client = ProxyManager.ProxyManager.Instance.CreateProxy<IImageReviewManager>();
             var response = await client.ReviewImageAsync(new ImageReviewRequest() { ImageId = imageId });
-            client.Close();
+            ProxyManager.ProxyManager.Instance.CloseProxy(client);
 
             return response.DailyImage;
         }

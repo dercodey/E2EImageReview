@@ -104,40 +104,48 @@ namespace ProxyManager
         /// <returns>array of MetadataReference objects</returns>
         private static MetadataReference[] GetMetadataReferences<TInterface>()
         {
-            // these are the standard metadata references
-            var standardMetadataReferences =
-                new MetadataReference[]
-                {
-                    MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
-                    MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
-                    MetadataReference.CreateFromFile(typeof(ChannelFactory).Assembly.Location),
-                    MetadataReference.CreateFromFile(typeof(DataContractAttribute).Assembly.Location),
-                    MetadataReference.CreateFromFile(typeof(TInterface).Assembly.Location),
-                };
+            try
+            { 
+                // these are the standard metadata references
+                var standardMetadataReferences =
+                    new MetadataReference[]
+                    {
+                        MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
+                        MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
+                        MetadataReference.CreateFromFile(typeof(ChannelFactory).Assembly.Location),
+                        MetadataReference.CreateFromFile(typeof(DataContractAttribute).Assembly.Location),
+                        MetadataReference.CreateFromFile(typeof(TInterface).Assembly.Location),
+                    };
 
-            // these are the return types (and generic descendants) used by methods on TInterface
-            var returnTypes =
-                typeof(TInterface)
-                    .GetMethods()
-                    .Select(mi => mi.ReturnType)
-                    .SelectMany(GetDescendentGenericArguments);
+                // these are the return types (and generic descendants) used by methods on TInterface
+                var returnTypes =
+                    typeof(TInterface)
+                        .GetMethods()
+                        .Select(mi => mi.ReturnType)
+                        .SelectMany(GetDescendentGenericArguments);
 
-            // these are the parameter types (and generic descendants) used by methods on TInterface
-            var parameterTypes =
-                typeof(TInterface)
-                    .GetMethods()
-                    .SelectMany(mi => mi.GetParameters())
-                    .Select(pi => pi.ParameterType)
-                    .SelectMany(GetDescendentGenericArguments);
+                // these are the parameter types (and generic descendants) used by methods on TInterface
+                var parameterTypes =
+                    typeof(TInterface)
+                        .GetMethods()
+                        .SelectMany(mi => mi.GetParameters())
+                        .Select(pi => pi.ParameterType)
+                        .SelectMany(GetDescendentGenericArguments);
 
-            // now get the MetadataReferences for all of the above
-            var interfaceMetadataReferences =
-                returnTypes
-                    .Concat(parameterTypes)
-                    .Select(tp => MetadataReference.CreateFromFile(tp.Assembly.Location));
+                // now get the MetadataReferences for all of the above
+                var interfaceMetadataReferences =
+                    returnTypes
+                        .Concat(parameterTypes)
+                        .Select(tp => MetadataReference.CreateFromFile(tp.Assembly.Location));
 
-            // and combine the standard and interface metadata, remove duplicates, and turn to array
-            return standardMetadataReferences.Concat(interfaceMetadataReferences).Distinct().ToArray();
+                // and combine the standard and interface metadata, remove duplicates, and turn to array
+                return standardMetadataReferences.Concat(interfaceMetadataReferences).Distinct().ToArray();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
 
         /// <summary>

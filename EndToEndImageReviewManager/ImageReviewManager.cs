@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 
+using ProxyManager;
+
 using ImagingTypes;
 using ImageReviewManager.Contracts;
 using EmzImagingInteractionManager.Contracts;
+
 
 namespace ImageReviewManager
 {
@@ -11,20 +14,20 @@ namespace ImageReviewManager
     {
         public async Task<ImageInfo> GetImageInfoAsync(Guid imageId)
         {
-            var client = new ImagingInteractionManagerClient();
+            var client = ProxyManager.ProxyManager.Instance.CreateProxy<IImagingInteractionManager>();
             var imageInfo = await client.GetImageInfoAsync(imageId);
-            client.Close();
+            ProxyManager.ProxyManager.Instance.CloseProxy(client);
 
             return imageInfo;
         }
 
         public async Task<ImageReviewResponse> ReviewImageAsync(ImageReviewRequest request)
         {
-            var client = new ImagingInteractionManagerClient();
+            var client = ProxyManager.ProxyManager.Instance.CreateProxy<IImagingInteractionManager>();
             var imageInfo = await client.GetImageInfoAsync(request.ImageId);
             ImageData dailyImageData = await client.GetImageDataForReviewAsync(request.ImageId);
             ImageData referenceImageData = null;
-            client.Close();
+            ProxyManager.ProxyManager.Instance.CloseProxy(client);
 
             return new ImageReviewResponse()
             {
