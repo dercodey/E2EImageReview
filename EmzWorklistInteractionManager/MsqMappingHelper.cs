@@ -24,6 +24,9 @@ namespace EmzImagingInteractionManager
                 return dict[msqEntityId];
             }
         }
+        
+        // this is an extraneous comment added by me
+        // it doesn't add anything
 
         internal static int MapIdToMsq(EntityType forEntityType, Guid entityId)
         {
