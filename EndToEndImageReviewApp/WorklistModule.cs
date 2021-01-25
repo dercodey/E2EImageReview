@@ -1,9 +1,9 @@
 ﻿using Prism.Modularity;
 using Prism.Regions;
 
-using Microsoft.Practices.Unity;
-
 using EndToEndImageReviewApp.Views;
+using Unity;
+using Prism.Ioc;
 
 namespace EndToEndImageReviewApp
 {
@@ -18,10 +18,15 @@ namespace EndToEndImageReviewApp
             _regionManager = regionManager;
         }
 
-        public void Initialize()
+        public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             _regionManager.RegisterViewWithRegion("WorklistRegion", typeof(WorklistView));
             _regionManager.RegisterViewWithRegion("SidebarRegion", typeof(StaffLoginView));
+        }
+
+        public void OnInitialized(IContainerProvider containerProvider)
+        {
+            // no additional initialization
         }
     }
 }
