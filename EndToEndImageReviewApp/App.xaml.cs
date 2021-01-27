@@ -42,6 +42,8 @@ namespace EndToEndImageReviewApp
             base.InitializeShell(shellWindow);
             App.Current.MainWindow = shellWindow;
             App.Current.MainWindow.Show();
+
+            var channelFactoryLocation = typeof(System.ServiceModel.ChannelFactory).Assembly.Location;
         }
     }
 }
