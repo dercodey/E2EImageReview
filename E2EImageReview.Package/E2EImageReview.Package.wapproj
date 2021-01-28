@@ -55,7 +55,7 @@
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
-    <EntryPointProjectUniqueName>..\EndToEndImageReviewAppCore\EndToEndImageReviewAppCore.csproj</EntryPointProjectUniqueName>
+    <EntryPointProjectUniqueName>..\EndToEndImageReviewApp\EndToEndImageReviewApp.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -72,7 +72,7 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EndToEndImageReviewAppCore\EndToEndImageReviewAppCore.csproj">
+    <ProjectReference Include="..\EndToEndImageReviewApp\EndToEndImageReviewApp.csproj">
       <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
     </ProjectReference>
   </ItemGroup>
