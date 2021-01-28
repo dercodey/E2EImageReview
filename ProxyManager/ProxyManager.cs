@@ -23,7 +23,7 @@ namespace ProxyManager
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
-        public TInterface GetProxy<TInterface>() =>
+        public TInterface GetProxy<TInterface>() where TInterface : class =>
             CreateProxy<TInterface>();
 
         /// <summary>
@@ -31,11 +31,24 @@ namespace ProxyManager
         /// </summary>
         /// <typeparam name="TInterface"></typeparam>
         /// <returns></returns>
-        public TInterface CreateProxy<TInterface>()
+        public TInterface CreateProxy<TInterface>() where TInterface : class
         {
-            Type proxyType = ProxyClassGenerator.GetProxyTypeFor<TInterface>();
-            TInterface proxy = (TInterface)Activator.CreateInstance(proxyType);
-            return (TInterface)proxy;
+            if (typeof(TInterface) == typeof(ImageReviewManager.Contracts.IImageReviewManager))
+            {
+                var proxy = new ImageReviewManagerProxy();
+                return proxy as TInterface;
+            }
+            else if (typeof(TInterface) == typeof(EmzImagingInteractionManager.Contracts.IImagingInteractionManager))
+            {
+                var proxy = new ImagingInteractionManagerProxy();
+                return proxy as TInterface;
+            }
+            else if (typeof(TInterface) == typeof(ImageWorkListAggregatorManager.Contracts.IWorklistAggregationManager))
+            {
+                var proxy = new WorklistAggregationManagerProxy();
+                return proxy as TInterface;
+            }
+            throw new Exception();
         }
 
         /// <summary>

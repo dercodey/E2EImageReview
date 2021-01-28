@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndToEndImageReviewApp", "EndToEndImageReviewApp\EndToEndImageReviewApp.csproj", "{6EA2C0C8-7EFE-4412-BD6A-CC8F98AAD999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndToEndImageReviewApp", "EndToEndImageReviewApp\EndToEndImageReviewApp.csproj", "{6EA2C0C8-7EFE-4412-BD6A-CC8F98AAD999}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FBE8671D-0E32-4C87-967E-61574B468DF3} = {FBE8671D-0E32-4C87-967E-61574B468DF3}
 		{651A4F37-B01C-43B9-977F-965996309E77} = {651A4F37-B01C-43B9-977F-965996309E77}
@@ -32,17 +32,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsqWorklistService", "MsqWo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsqServices", "MsqServices", "{7AAFD470-D248-4EB3-B068-FC862BBE7779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmzImagingInteractionManager.Contracts", "EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj", "{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmzImagingInteractionManager.Contracts", "EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj", "{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageReviewManager.Contracts", "ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj", "{170F4763-EBA7-40DB-B265-02F4B02DB8EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageReviewManager.Contracts", "ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj", "{170F4763-EBA7-40DB-B265-02F4B02DB8EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F5A560F2-75BC-46C8-A854-3E23DB470B2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagingTypes", "ImagingTypes\ImagingTypes.csproj", "{9ED31117-57D0-4202-93E8-E4501A84C3DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImagingTypes", "ImagingTypes\ImagingTypes.csproj", "{9ED31117-57D0-4202-93E8-E4501A84C3DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorklistAggregatorManager.Contracts", "ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj", "{EF7C973D-62FA-4140-B357-46B840308DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageWorklistAggregatorManager.Contracts", "ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj", "{EF7C973D-62FA-4140-B357-46B840308DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyManager", "ProxyManager\ProxyManager.csproj", "{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyManager", "ProxyManager\ProxyManager.csproj", "{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyManagerTests", "ProxyManagerTests\ProxyManagerTests.csproj", "{1B264F93-CA13-47AA-ADC9-D519A57A2327}"
 EndProject

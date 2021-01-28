@@ -5,8 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0" />
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.8.0" />
+    <Compile Remove="ClassDefinition.cs" />
+    <Compile Remove="MethodDefinition.cs" />
+    <Compile Remove="ProxyClassGenerator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj" />
+    <ProjectReference Include="..\ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj" />
+    <ProjectReference Include="..\ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
