@@ -105,15 +105,24 @@ namespace ProxyManager
         private static MetadataReference[] GetMetadataReferences<TInterface>()
         {
             try
-            { 
+            {
+                var netstandardAsm = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "netstandard");
+                var runtimeAsm = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "System.Runtime");
+                var collectionsAsm = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "System.Collections");
+                var svcModelAsm = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "System.Private.ServiceModel");
+
                 // these are the standard metadata references
                 var standardMetadataReferences =
                     new MetadataReference[]
                     {
-                        MetadataReference.CreateFromFile(typeof(object).Assembly.Location),
-                        MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
-                        MetadataReference.CreateFromFile(typeof(ChannelFactory).Assembly.Location),
-                        MetadataReference.CreateFromFile(typeof(DataContractAttribute).Assembly.Location),
+                        MetadataReference.CreateFromFile(netstandardAsm.Location),
+                        MetadataReference.CreateFromFile(runtimeAsm.Location),
+                        MetadataReference.CreateFromFile(collectionsAsm.Location),
+                        MetadataReference.CreateFromFile(svcModelAsm.Location),
+                        //MetadataReference.CreateFromFile(typeof(System.Object).Assembly.Location),
+                        //MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location),
+                        // MetadataReference.CreateFromFile(typeof(ChannelFactory).Assembly.Location),
+                        // MetadataReference.CreateFromFile(typeof(DataContractAttribute).Assembly.Location),
                         MetadataReference.CreateFromFile(typeof(TInterface).Assembly.Location),
                     };
 
@@ -192,9 +201,9 @@ namespace ProxyManager
                 {
                     IEnumerable<Diagnostic> failures = result.Diagnostics.Where(diagnostic =>
                         diagnostic.IsWarningAsError ||
-                        diagnostic.Severity == DiagnosticSeverity.Error);
+                        diagnostic.Severity == DiagnosticSeverity.Error);               
                     failures.ToList().ForEach(diagnostic => Console.Error.WriteLine("{0}: {1}", diagnostic.Id, diagnostic.GetMessage()));
-                    return null;
+                    throw new Exception();
                 }
 
                 ms.Seek(0, SeekOrigin.Begin);

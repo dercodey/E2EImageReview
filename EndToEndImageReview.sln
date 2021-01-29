@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndToEndImageReviewApp", "EndToEndImageReviewApp\EndToEndImageReviewApp.csproj", "{6EA2C0C8-7EFE-4412-BD6A-CC8F98AAD999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndToEndImageReviewApp", "EndToEndImageReviewApp\EndToEndImageReviewApp.csproj", "{6EA2C0C8-7EFE-4412-BD6A-CC8F98AAD999}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FBE8671D-0E32-4C87-967E-61574B468DF3} = {FBE8671D-0E32-4C87-967E-61574B468DF3}
 		{651A4F37-B01C-43B9-977F-965996309E77} = {651A4F37-B01C-43B9-977F-965996309E77}
@@ -32,27 +32,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsqWorklistService", "MsqWo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MsqServices", "MsqServices", "{7AAFD470-D248-4EB3-B068-FC862BBE7779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmzImagingInteractionManager.Contracts", "EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj", "{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmzImagingInteractionManager.Contracts", "EmzImagingInteractionManager.Contracts\EmzImagingInteractionManager.Contracts.csproj", "{2A651ADF-C51A-484F-AD14-DAA20CC19BBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageReviewManager.Contracts", "ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj", "{170F4763-EBA7-40DB-B265-02F4B02DB8EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageReviewManager.Contracts", "ImageReviewManager.Contracts\ImageReviewManager.Contracts.csproj", "{170F4763-EBA7-40DB-B265-02F4B02DB8EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F5A560F2-75BC-46C8-A854-3E23DB470B2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImagingTypes", "ImagingTypes\ImagingTypes.csproj", "{9ED31117-57D0-4202-93E8-E4501A84C3DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImagingTypes", "ImagingTypes\ImagingTypes.csproj", "{9ED31117-57D0-4202-93E8-E4501A84C3DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorklistAggregatorManager.Contracts", "ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj", "{EF7C973D-62FA-4140-B357-46B840308DF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageWorklistAggregatorManager.Contracts", "ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj", "{EF7C973D-62FA-4140-B357-46B840308DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyManager", "ProxyManager\ProxyManager.csproj", "{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProxyManager", "ProxyManager\ProxyManager.csproj", "{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyManagerTests", "ProxyManagerTests\ProxyManagerTests.csproj", "{1B264F93-CA13-47AA-ADC9-D519A57A2327}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWorkListAggregatorManagerTests", "ImageWorkListAggregatorManagerTests\ImageWorkListAggregatorManagerTests.csproj", "{5A83C0B2-B70B-4CBA-AB66-CEB6F0A5A633}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndToEndImageReviewAppCore", "EndToEndImageReviewAppCore\EndToEndImageReviewAppCore.csproj", "{F1D58F54-94B4-466E-8445-E67DA501E902}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageWorklistModule.Test", "ImageWorklistModule.Test\ImageWorklistModule.Test.csproj", "{1D1D8E44-1608-4C78-8A18-182F2A6B183F}"
 EndProject
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "E2EImageReview.Package", "E2EImageReview.Package\E2EImageReview.Package.wapproj", "{59117A1C-F5D3-41A1-B65A-7B9F39FFE4DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageWorklistModule", "ImageWorklistModule\ImageWorklistModule.csproj", "{FB3A4296-DABD-41B8-B0A9-023372736800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -308,26 +308,6 @@ Global
 		{5A83C0B2-B70B-4CBA-AB66-CEB6F0A5A633}.Release|x64.Build.0 = Release|Any CPU
 		{5A83C0B2-B70B-4CBA-AB66-CEB6F0A5A633}.Release|x86.ActiveCfg = Release|Any CPU
 		{5A83C0B2-B70B-4CBA-AB66-CEB6F0A5A633}.Release|x86.Build.0 = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|ARM.Build.0 = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|ARM64.Build.0 = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|x64.Build.0 = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Debug|x86.Build.0 = Debug|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|ARM.ActiveCfg = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|ARM.Build.0 = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|ARM64.Build.0 = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|x64.ActiveCfg = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|x64.Build.0 = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|x86.ActiveCfg = Release|Any CPU
-		{F1D58F54-94B4-466E-8445-E67DA501E902}.Release|x86.Build.0 = Release|Any CPU
 		{1D1D8E44-1608-4C78-8A18-182F2A6B183F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D1D8E44-1608-4C78-8A18-182F2A6B183F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1D8E44-1608-4C78-8A18-182F2A6B183F}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -378,6 +358,26 @@ Global
 		{59117A1C-F5D3-41A1-B65A-7B9F39FFE4DC}.Release|x86.ActiveCfg = Release|x86
 		{59117A1C-F5D3-41A1-B65A-7B9F39FFE4DC}.Release|x86.Build.0 = Release|x86
 		{59117A1C-F5D3-41A1-B65A-7B9F39FFE4DC}.Release|x86.Deploy.0 = Release|x86
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|ARM.Build.0 = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|x64.Build.0 = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Debug|x86.Build.0 = Debug|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|ARM.Build.0 = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|ARM64.Build.0 = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|x64.ActiveCfg = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|x64.Build.0 = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|x86.ActiveCfg = Release|Any CPU
+		{FB3A4296-DABD-41B8-B0A9-023372736800}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -395,8 +395,8 @@ Global
 		{701BD2F3-3DE6-42AE-BBE9-5BC5140CABB1} = {F5A560F2-75BC-46C8-A854-3E23DB470B2C}
 		{1B264F93-CA13-47AA-ADC9-D519A57A2327} = {F5A560F2-75BC-46C8-A854-3E23DB470B2C}
 		{5A83C0B2-B70B-4CBA-AB66-CEB6F0A5A633} = {D1F2C1FF-F038-4654-BEC5-F9DC38E0E6BE}
-		{F1D58F54-94B4-466E-8445-E67DA501E902} = {8574B8BD-3729-481A-B592-E0D6BB9CFBA3}
 		{1D1D8E44-1608-4C78-8A18-182F2A6B183F} = {8574B8BD-3729-481A-B592-E0D6BB9CFBA3}
+		{FB3A4296-DABD-41B8-B0A9-023372736800} = {8574B8BD-3729-481A-B592-E0D6BB9CFBA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA29C12F-BF7F-4E61-8A5A-59CE0A047E7A}
