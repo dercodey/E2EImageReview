@@ -69,6 +69,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ImageWorklistAggregatorManager.Contracts\ImageWorklistAggregatorManager.Contracts.csproj">
+      <Project>{ef7c973d-62fa-4140-b357-46b840308df9}</Project>
+      <Name>ImageWorklistAggregatorManager.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImageWorkListAggregatorManager\ImageWorkListAggregatorManager.csproj">
       <Project>{651A4F37-B01C-43B9-977F-965996309E77}</Project>
       <Name>ImageWorkListAggregatorManager</Name>

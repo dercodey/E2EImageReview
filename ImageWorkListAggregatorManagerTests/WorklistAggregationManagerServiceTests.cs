@@ -11,16 +11,10 @@ using System.ServiceModel;
 
 namespace ImageWorkListAggregatorManager.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class WorklistAggregationManagerServiceTests
     {
-        [ClassInitialize]
-        public void StartServices()
-        {
-            var sh = new ServiceHost(new WorklistAggregationManagerService(), null);
-        }
-
-        [TestMethod()]
+        [TestMethod]
         public void GetWorklistForStaffAsyncTest()
         {
             var client = new WorklistAggregationManagerService();
