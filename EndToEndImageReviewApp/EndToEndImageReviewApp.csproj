@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFrameworks>netcoreapp3.1;net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
+    <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <ItemGroup>
