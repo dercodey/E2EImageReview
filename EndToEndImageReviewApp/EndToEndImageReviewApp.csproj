@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net8.0-windows;net48</TargetFrameworks>
+    <TargetFrameworks>net8.0-windows;net48;netcoreapp3.1</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
     <StartupObject>EndToEndImageReviewApp.App</StartupObject>
