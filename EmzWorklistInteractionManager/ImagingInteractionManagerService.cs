@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreWCF;
 
 using ImagingTypes;
-
 using EmzImagingInteractionManager.Contracts;
 using EmzImagingInteractionManager.MsqWorklistService;
 
 namespace EmzImagingInteractionManager
 {
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class ImagingInteractionManagerService : IImagingInteractionManager
     {
         public async Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId)
@@ -31,7 +32,6 @@ namespace EmzImagingInteractionManager
                     AcquisitionDateTime = item.AcquisitionDateTime
                 });
 
-            // convert staff Id to 
             return worklist.ToList();
         }
 
@@ -66,6 +66,6 @@ namespace EmzImagingInteractionManager
                 Width = msqImageData.Width,
                 Pixels = msqImageData.Pixels,
             };
-        }
+ }
     }
 }
