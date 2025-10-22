@@ -21,20 +21,21 @@ namespace ImageWorkListAggregatorManager
 
       var app = builder.Build();
 
-            app.UseServiceModel(builder =>
- {
+        // Cast to IApplicationBuilder to resolve ambiguity
+       ((IApplicationBuilder)app).UseServiceModel(serviceBuilder =>
+            {
                 // Configure service endpoints
-                builder.AddService<WorklistAggregationManagerService>();
-                builder.AddServiceEndpoint<WorklistAggregationManagerService, IWorklistAggregationManager>(
+serviceBuilder.AddService<WorklistAggregationManagerService>();
+      serviceBuilder.AddServiceEndpoint<WorklistAggregationManagerService, IWorklistAggregationManager>(
         new BasicHttpBinding(), 
-         "/ImageWorkListAggregator/WorklistAggregationManagerService.svc");
+      "/ImageWorkListAggregator/WorklistAggregationManagerService.svc");
 
       // Enable metadata
-         var serviceMetadataBehavior = app.Services.GetRequiredService<ServiceMetadataBehavior>();
-         serviceMetadataBehavior.HttpGetEnabled = true;
-            });
+    var serviceMetadataBehavior = app.Services.GetRequiredService<ServiceMetadataBehavior>();
+     serviceMetadataBehavior.HttpGetEnabled = true;
+  });
 
-            app.Run();
-    }
+         app.Run();
+        }
     }
 }
