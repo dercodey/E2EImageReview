@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ImageWorkListAggregatorManager.Contracts;
 
 namespace ImageWorkListAggregatorManager
 {
@@ -12,28 +13,28 @@ namespace ImageWorkListAggregatorManager
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(args);
 
             // Add CoreWCF services
             builder.Services.AddServiceModelServices();
-            builder.Services.AddServiceModelMetadata();
+          builder.Services.AddServiceModelMetadata();
 
-            var app = builder.Build();
+      var app = builder.Build();
 
             app.UseServiceModel(builder =>
-            {
+ {
                 // Configure service endpoints
                 builder.AddService<WorklistAggregationManagerService>();
-                builder.AddServiceEndpoint<WorklistAggregationManagerService, IWorklistAggregationManagerService>(
-                    new BasicHttpBinding(),
-                    "/ImageWorkListAggregator/WorklistAggregationManagerService.svc");
+                builder.AddServiceEndpoint<WorklistAggregationManagerService, IWorklistAggregationManager>(
+        new BasicHttpBinding(), 
+         "/ImageWorkListAggregator/WorklistAggregationManagerService.svc");
 
-                // Enable metadata
-                var serviceMetadataBehavior = app.Services.GetRequiredService<ServiceMetadataBehavior>();
-                serviceMetadataBehavior.HttpGetEnabled = true;
+      // Enable metadata
+         var serviceMetadataBehavior = app.Services.GetRequiredService<ServiceMetadataBehavior>();
+         serviceMetadataBehavior.HttpGetEnabled = true;
             });
 
             app.Run();
-        }
+    }
     }
 }
