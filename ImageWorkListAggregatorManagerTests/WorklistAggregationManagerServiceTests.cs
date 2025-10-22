@@ -1,30 +1,49 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
-using ImageWorkListAggregatorManager;
-using System.ServiceModel;
+using CoreWCF;
 
 namespace ImageWorkListAggregatorManager.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class WorklistAggregationManagerServiceTests
     {
-        [ClassInitialize]
-        public void StartServices()
+        private WebApplicationFactory<Program> _factory;
+
+        [TestInitialize]
+        public void Initialize()
         {
-            var sh = new ServiceHost(new WorklistAggregationManagerService(), null);
+            _factory = new WebApplicationFactory<Program>()
+        .WithWebHostBuilder(builder =>
+         {
+          builder.ConfigureServices(services =>
+          {
+ services.AddServiceModelServices();
+         services.AddServiceModelMetadata();
+       services.AddSingleton<WorklistAggregationManagerService>();
+   });
+     });
         }
 
-        [TestMethod()]
-        public void GetWorklistForStaffAsyncTest()
-        {
-            var client = new WorklistAggregationManagerService();
-            var taskResult = client.GetWorklistForStaffAsync(Guid.Empty);
+ [TestCleanup]
+        public void Cleanup()
+     {
+    _factory?.Dispose();
         }
+
+        [TestMethod]
+        public async Task GetWorklistForStaffAsyncTest()
+        {
+            // Arrange
+            var service = _factory.Services.GetRequiredService<WorklistAggregationManagerService>();
+
+            // Act
+            var result = await service.GetWorklistForStaffAsync(Guid.Empty);
+
+            // Assert
+            Assert.IsNotNull(result);
+     }
     }
 }
