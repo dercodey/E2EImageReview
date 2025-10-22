@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-
-using ProxyManager;
-
+using CoreWCF;
 using ImagingTypes;
 using ImageReviewManager.Contracts;
 using EmzImagingInteractionManager.Contracts;
 
-
 namespace ImageReviewManager
 {
-    public class ImageReviewManager : IImageReviewManager
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
+    public class ImageReviewManagerService : IImageReviewManager
     {
         public async Task<ImageInfo> GetImageInfoAsync(Guid imageId)
         {
