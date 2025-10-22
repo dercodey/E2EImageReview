@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ServiceModel;
+using CoreWCF;
 
 using ImagingTypes;
-
 using ImageWorkListAggregatorManager.Contracts;
 using EmzImagingInteractionManager.Contracts;
 
-
-
 namespace ImageWorkListAggregatorManager
 {
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class WorklistAggregationManagerService : IWorklistAggregationManager
     {
         public async Task<List<WorklistItem>> GetWorklistForStaffAsync(Guid staffId)
