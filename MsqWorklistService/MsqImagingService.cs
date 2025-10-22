@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CoreWCF;
 
 namespace MsqWorklistService
 {
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class MsqImagingService : IMsqImagingService
     {
         public List<MsqWorklistItem> GetWorklistForStaff(int staffId)
@@ -20,7 +22,6 @@ namespace MsqWorklistService
                 };
             return worklist.ToList();
         }
-
 
         public MsqImageInfo GetImageInfo(int imgId)
         {
@@ -70,7 +71,7 @@ namespace MsqWorklistService
                     Height = imageRepositoryData.Pixels.GetLength(1),
                 };
 
-            msqImageData.Pixels = new byte[ msqImageData.Width * msqImageData.Height ];
+            msqImageData.Pixels = new byte[msqImageData.Width * msqImageData.Height];
 
             for (int x = 0; x < msqImageData.Width; x++)
             {
